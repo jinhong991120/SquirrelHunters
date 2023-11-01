@@ -9,7 +9,7 @@
 package game;
 import game.*;
 
-class squirrel{
+class squirrel extends Characters{
     /** User-defined name */
     private String name; 
     /** Position of Main Character at any given time */
@@ -81,6 +81,15 @@ class squirrel{
     public int get_speed(){
         return speed;
     }
+   /**
+    * Method toString()
+    * 
+    * Prints update of Squirrel
+    * 
+    */
+   public void toString(){
+        System.out.println(name + " has " + acorn_counter + " acorns. Position (x,y) = (" + x_pos + "," + y_pos + "). Speed = " + Speed );
+   }
 
     /**
      * Method cleanup 
