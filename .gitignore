@@ -1,0 +1,13 @@
+# Maven
+target/
+
+# IDE files (Eclipse, IntelliJ, etc.)
+.classpath
+.project
+.settings/
+
+# Mac-specific
+.DS_Store
+
+# Logs
+log/
