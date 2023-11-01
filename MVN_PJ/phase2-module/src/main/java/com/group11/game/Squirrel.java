@@ -9,7 +9,7 @@
 package game;
 import game.*;
 
-class squirrel extends Characters{
+class Squirrel{
     /** User-defined name */
     private String name; 
     /** Position of Main Character at any given time */
@@ -70,7 +70,7 @@ class squirrel extends Characters{
         return name;
     }
     public int get_acorns(){
-        return acorn_counter;
+        return acornCounter;
     }
     public int get_x(){
         return x_pos;
@@ -82,13 +82,13 @@ class squirrel extends Characters{
         return speed;
     }
    /**
-    * Method toString()
+    * Method toString1()
     * 
     * Prints update of Squirrel
     * 
     */
-   public void toString(){
-        System.out.println(name + " has " + acorn_counter + " acorns. Position (x,y) = (" + x_pos + "," + y_pos + "). Speed = " + Speed );
+   public void toString1(){
+        System.out.println(name + " has " + acornCounter + " acorns. Position (x,y) = (" + x_pos + "," + y_pos + "). Speed = " + speed );
    }
 
     /**
@@ -98,12 +98,14 @@ class squirrel extends Characters{
      * 
      * Death 
      */
+
+    /*
     public void cleanup(){
         this.name = null;
         this.x_pos = null;
         this.y_pos = null;
         this.speed = null;
         this.acorn_counter = null;
-    }
+    }*/
 
 }

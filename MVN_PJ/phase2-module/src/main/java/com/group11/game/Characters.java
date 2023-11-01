@@ -1,4 +1,5 @@
-package com.group11.game;
+package game;
+import game.*;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
