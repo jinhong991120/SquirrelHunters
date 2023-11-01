@@ -56,6 +56,18 @@ public class GameFeature{
             tf_acorn = TRUE;
         }
     }
+    /**
+     * Getters
+     */
+    public boolean is_Acorn(){
+        return tf_acorn;
+    }
+    public int get_x(){
+        return x_pos;
+    }
+    public int get_y(){
+        return y_pos;
+    }
 
     public abstract rand_generate();
 
