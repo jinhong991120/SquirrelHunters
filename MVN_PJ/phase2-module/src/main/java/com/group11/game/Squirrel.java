@@ -6,6 +6,8 @@
  * 
  * 
  */
+package game;
+import game.*;
 
 class squirrel{
     /** User-defined name */
@@ -80,6 +82,19 @@ class squirrel{
         return speed;
     }
 
-    
+    /**
+     * Method cleanup 
+     * 
+     * aka
+     * 
+     * Death 
+     */
+    public void cleanup(){
+        this.name = null;
+        this.x_pos = null;
+        this.y_pos = null;
+        this.speed = null;
+        this.acorn_counter = null;
+    }
 
 }
