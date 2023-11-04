@@ -45,3 +45,8 @@ public class GamePanel extends JPanel implements Runnable{
      * Game {@code Thread}
      */
     protected Thread gameThread;
+    
+    /**
+     * Collision Checker
+     */
+    protected CollisionChecker cChecker = new CollisionChecker(this);
