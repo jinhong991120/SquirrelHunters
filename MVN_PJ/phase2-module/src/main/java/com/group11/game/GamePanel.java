@@ -65,3 +65,14 @@ public class GamePanel extends JPanel implements Runnable{
      * {@code TileManger}
      */
     protected TileManager tm = new TileManager(this);
+    
+    /**
+     * Rewards {@code Items}
+     */
+    protected Items rewards[] = new Items[10];
+
+    /**
+     * Punishments {@code Items}
+     */
+    protected Items punishments[] = new Items[10];
+
