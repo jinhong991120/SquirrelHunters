@@ -55,3 +55,9 @@ public class GamePanel extends JPanel implements Runnable{
      * {@code KeyHandler} to interact with keyboard inputs
      */
     protected KeyHandler key = new KeyHandler(this);
+    
+     /**
+     * Main {@code Characters} which is the {@code Squirrel}
+     */
+    protected Squirrel squirrel = new Squirrel(this, key);
+
