@@ -61,3 +61,7 @@ public class GamePanel extends JPanel implements Runnable{
      */
     protected Squirrel squirrel = new Squirrel(this, key);
 
+    /**
+     * {@code TileManger}
+     */
+    protected TileManager tm = new TileManager(this);
