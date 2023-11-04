@@ -50,3 +50,8 @@ public class GamePanel extends JPanel implements Runnable{
      * Collision Checker
      */
     protected CollisionChecker cChecker = new CollisionChecker(this);
+    
+    /**
+     * {@code KeyHandler} to interact with keyboard inputs
+     */
+    protected KeyHandler key = new KeyHandler(this);
