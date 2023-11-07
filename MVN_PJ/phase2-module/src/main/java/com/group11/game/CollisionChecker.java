@@ -40,38 +40,38 @@ public class CollisionChecker {
     switch (entity.direction) {
     case "up":
       topRow = (top - entity.speed) / gp.tileSize;
-      tileNum1 = gp.tm.mapArr[leftCol][topRow];
-      tileNum2 = gp.tm.mapArr[rightCol][topRow];
-      if (gp.tm.tiles.get(tileNum1).collision == true ||
-          gp.tm.tiles.get(tileNum2).collision == true || top - 10 < 0) {
+      tileNum1 = gp.tr.mapArr[leftCol][topRow];
+      tileNum2 = gp.tr.mapArr[rightCol][topRow];
+      if (gp.tr.tiles.get(tileNum1).collision == true ||
+          gp.tr.tiles.get(tileNum2).collision == true || top - 10 < 0) {
         entity.collisionOn = true;
       }
       break;
     case "down":
       botRow = (bot + entity.speed) / gp.tileSize;
-      tileNum1 = gp.tm.mapArr[leftCol][botRow];
-      tileNum2 = gp.tm.mapArr[rightCol][botRow];
-      if (gp.tm.tiles.get(tileNum1).collision == true ||
-          gp.tm.tiles.get(tileNum2).collision == true ||
+      tileNum1 = gp.tr.mapArr[leftCol][botRow];
+      tileNum2 = gp.tr.mapArr[rightCol][botRow];
+      if (gp.tr.tiles.get(tileNum1).collision == true ||
+          gp.tr.tiles.get(tileNum2).collision == true ||
           bot + 10 > gp.screenHeight) {
         entity.collisionOn = true;
       }
       break;
     case "left":
       leftCol = (left - entity.speed) / gp.tileSize;
-      tileNum1 = gp.tm.mapArr[leftCol][topRow];
-      tileNum2 = gp.tm.mapArr[leftCol][botRow];
-      if (gp.tm.tiles.get(tileNum1).collision == true ||
-          gp.tm.tiles.get(tileNum2).collision == true || left - 5 < 0) {
+      tileNum1 = gp.tr.mapArr[leftCol][topRow];
+      tileNum2 = gp.tr.mapArr[leftCol][botRow];
+      if (gp.tr.tiles.get(tileNum1).collision == true ||
+          gp.tr.tiles.get(tileNum2).collision == true || left - 5 < 0) {
         entity.collisionOn = true;
       }
       break;
     case "right":
       rightCol = (right + entity.speed) / gp.tileSize;
-      tileNum1 = gp.tm.mapArr[rightCol][topRow];
-      tileNum2 = gp.tm.mapArr[rightCol][botRow];
-      if (gp.tm.tiles.get(tileNum1).collision == true ||
-          gp.tm.tiles.get(tileNum2).collision == true ||
+      tileNum1 = gp.tr.mapArr[rightCol][topRow];
+      tileNum2 = gp.tr.mapArr[rightCol][botRow];
+      if (gp.tr.tiles.get(tileNum1).collision == true ||
+          gp.tr.tiles.get(tileNum2).collision == true ||
           right + 10 > gp.screenWidth) {
         entity.collisionOn = true;
       }
