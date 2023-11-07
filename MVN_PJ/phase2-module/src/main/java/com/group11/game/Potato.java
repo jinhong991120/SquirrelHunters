@@ -1,14 +1,33 @@
 /**
- * Implementation of GameFeature class for Potato 
+ * extends item class for Potato 
  */
-class Potato implements GameFeature{
-    /**Random generation of Acorn */
-    public void rand_generate(){
+package com.group11.game;
+
+public class Potato extends Items{
+    public Potato() {
+
+        name = "Potato"; 
+        
+        try {
+            image = ImageIO.read()
+        }catch(IOException i) {
+            i.printStackTrace(); 
+        }
+        
+        score += 10; 
+
+        xPosition = 0;
+        yPosition = 0; 
+
 
     }
-    /**Generates Acorn in specific spot */
-    public void generate(int x_pos, int y_pos){
+    // /**Random generation of Acorn */
+    // public void rand_generate(){
 
-    }
+    // }
+    // /**Generates Acorn in specific spot */
+    // public void generate(int x_pos, int y_pos){
+
+    // }
 
 }
