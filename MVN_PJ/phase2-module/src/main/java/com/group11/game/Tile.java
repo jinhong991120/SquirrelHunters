@@ -1,9 +1,13 @@
 /**
  * 
  */
+import game.*;/
+package game;
+
 public class Tile{
     /** integer represents what type of Tile */
     private int TileType;
+    public BufferedImage image;
     /**Constructor */
     public Tile(int TileType){
         this.TileType=TileType;
