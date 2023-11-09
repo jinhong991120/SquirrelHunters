@@ -28,8 +28,7 @@ class TileRepresenter{
     /**
      * purpose : gets and sets images
      */
-    public void getTileImage(){
-        try{ 
+    public void getTileImage(){ 
 
           tiles[0] = new tile();
           tiles[1] = new tile();
@@ -39,12 +38,31 @@ class TileRepresenter{
           tiles[1].image = imageIO.read(getClass().getResourceAsStream("directory")) ;
           tiles[2].image = imageIO.read(getClass().getResourceAsStream("directory")) ;
 
+
+    }
+    /** @result = tiles being drawn from attributes in tile class */
+    public void draw(Graphics2D g2d){
+
+        int pos_x, pos_y = 0;
+        
+        for(int i = 0; i < mapArr.length(); i++){
+            for(int j = 0; j < mapArr[].length(); j++){
+
+                if(mapArr[i][j] == 0){
+                    g2d.drawimage(tiles[0].image, pos_x, pos_y, gp.maxScreenCol, gp.maxScreenRow, null );
+                }
+                else if(mapArr == 1){
+                    g2d.drawimage(tiles[1].image, pos_x, pos_y, gp.maxScreenCol, gp.maxScreenRow, null );
+                }
+                else {
+                    g2d.drawimage(tiles[2].image, pos_x, pos_y, gp.maxScreenCol, gp.maxScreenRow, null );
+                }
+
+                pos_x+=gp.tileSize;
         }
-        catch(IOException e){
-            e.printStackTrace();
+        pos_y+=gp.tileSize;
         }
     }
-
     /** use when constructor is called to get map from text file */
     private void loadMap(){
         String map = new File("Path to text file");
@@ -59,9 +77,10 @@ class TileRepresenter{
             }
         }
            
+
     }
 
-
+    
 
 
 
