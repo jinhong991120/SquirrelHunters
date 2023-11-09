@@ -5,17 +5,16 @@ import game.*;/
 package game;
 
 public class Tile{
-    /** integer represents what type of Tile */
-    private int TileType;
+    /** Attributes of Tile to help represent the map */
+    public int TileType;
+    public boolean collision;
     public BufferedImage image;
-    /**Constructor */
-    public Tile(int TileType){
-        this.TileType=TileType;
-    }
+
     /** @return int representing TileType */
     public int getTT(){
         return TileType;
     }
+    
     /** @param int for type of tile that is being changed
      * @return int for the new Tile
      */
