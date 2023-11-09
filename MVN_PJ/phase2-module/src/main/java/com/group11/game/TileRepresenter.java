@@ -65,18 +65,21 @@ class TileRepresenter{
     }
     /** use when constructor is called to get map from text file */
     private void loadMap(){
-        String map = new File("Path to text file");
-        Scanner scanner = new Scanner(new BufferedReader(new FileReader(map)));
+       InputStream is = getClass().getResourceAsStream("directory + .txt");
+       BufferedReader br = new BufferedReader(new InputStream(is));
 
-        while(scanner.hasNextLine()){
-            for(int i = 0; i<maxScreenCol; i++){
-                String[] temp = scanner.nextLine().trim().split(" ");
-                for(int h = 0; h<temp.length; h++){
-                    mapArr[i][h] = Integer.parseInt(temp[h]);
-                }
+       for(int r = 0; r<gp.maxScreenRow; r++){
+            String line_r = br.readline();
+
+            for(int c = 0;c<gp.maxScreenCol;c++){
+                String map_format[] = line_r.split(" ");
+                int ind_tile = Integer.parseInt(map_format[c]);
+                mapArr[c][r]=ind_tile;
             }
-        }
+
+       }
            
+    br.close();
 
     }
 
