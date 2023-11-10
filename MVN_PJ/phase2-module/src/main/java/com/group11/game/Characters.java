@@ -1,163 +1,33 @@
-package game;
-import game.*;
+package com.group11.game;
+
 
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.util.Random;
-import javax.imageio.ImageIO;
-import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.util.Random;
 
 /**
- * Character class
+ *Abstract character class for the moving entity(squirrel and racoon) in the game
+ * including some general setting of the moving entity
+ *
  */
+
 public abstract class Characters {
 
-    /**
-     * target {@code GamePanel} 
-     */
-    protected GamePanel gp;
+    public int xPosition;
+    public int yPosition;
+    public int speed;
 
-    /**
-     * The X coordinate on the Screen of {@code Characters}
-     */
-    protected int xPosition;
+    public BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
+    public String direction;
 
-    /**
-     * The Y coordinate on the Screen of {@code Characters}
-     */
-    protected int yPosition;
-    
-    /**
-     * The speed of {@code Characters}
-     */
-    protected int speed;
-
-    /**
-     * Sprite Images for {@code Characters}'s movement
-     */
-    protected BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
-
-    /**
-     * The Direction of {@code Characters}
-     */
-    protected String direction;
-
-    /**
-     * The option for collision, deafult is {@code false}
-     */
-    protected boolean collisionOn = false;
-
-    /**
-     * Solid Area of {@code Characters} represented by {@code Ractangle}
-     */
-    protected Rectangle solidArea = new Rectangle(0, 0, 32, 32);
-
-    /**
-     * Game Score
-     */
-    protected int score = 0;
-
-    /**
-     * Action lock counter
-     */
-    protected int actionLockCounter = 0;
-
-    /**
-     * The option for invincible 
-     */
-    protected boolean invincible = false;
-
-    /**
-     * The counts of invincible
-     */
-    protected int invincibleCounter = 0;
-    
-    /**
-     * The type of {@code Characters}, 0 for {@code Student} and 1 for {@code Raccoon}
-     */
-    protected int type; 
-
-    /**
-     * The directory of image resources
-     */
-    protected String directory;
-
-    /**
-     * The default solid area of {@code Characters}
-     */
-    protected int solidAreaDefaultX, solidAreaDefaultY;
-
-    /**
-     * The number representing for sprites
-     */
     protected int spriteCounter = 0;
-
-    /**
-     * The number representing for sprites
-     */
     protected int spriteNumber = 1;
 
-    /**
-     * Constructor.
-     *
-     * @param gp target GamePanel to be updated
-     */
-    public Characters(GamePanel gp) {
-        this.gp = gp;
-    }
+    public Rectangle solidArea;
+    public int solidAreaDefaultX, solidAreaDefaultY;
 
-    /**
-     * Read the character's sprite images.
-     
-     Haven't got the images, will be updated once images defined.
-     
-    public void getImage(){
-        try{
-            up1 = ImageIO.read(getClass().getResourceAsStream(directory + ".png"));
-            up2 = ImageIO.read(getClass().getResourceAsStream(directory + ".png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream(directory + ".png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream(directory + ".png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream(directory + ".png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream(directory + ".png"));
-            right1 = ImageIO.read(getClass().getResourceAsStream(directory + ".png"));
-            right2 = ImageIO.read(getClass().getResourceAsStream(directory + ".png"));
-        }
-        catch(IOException e){
-            e.printStackTrace();
-        }
-    }
-  */
 
-    /**
-     * Sets the actions of characters.
-     */
-    public void setAction() {
-        actionLockCounter++;
-    
-        if (actionLockCounter == 90) {
 
-            Random random = new Random();
-            int i = random.nextInt(100) + 1; // Picks num from 1-100
-    
-            if (i <= 25) direction = "up";
-            if (i > 25 && i <= 50) direction = "down";
-            if (i > 50 && i <= 75) direction = "left";
-            if (i > 75 && i <= 100) direction = "right";
+    public boolean collisionOn = false;
 
-            actionLockCounter = 0;
-        }
-    }
-    
-    /**
-     * Updates characters.
-     */
-    public abstract void update();
-    
-    /**
-     * Draw onto panel.
-     *
-     * @param g2 the Graphics2D object to draw on
-     */
-    public abstract void draw(Graphics2D g2);
 }
