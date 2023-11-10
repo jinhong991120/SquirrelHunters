@@ -214,34 +214,34 @@ public class CollisionChecker {
     enemy.solidArea.y = enemy.yPosition + enemy.solidArea.y;
 
     // get the Squirrel's solid area position
-    gp.Squirrel.solidArea.x = gp.Squirrel.xPosition + gp.Squirrel.solidArea.x;
-    gp.Squirrel.solidArea.y = gp.Squirrel.yPosition + gp.Squirrel.solidArea.y;
+    gp.Squirrels.solidArea.x = gp.Squirrels.xPosition + gp.Squirrels.solidArea.x;
+    gp.Squirrels.solidArea.y = gp.Squirrels.yPosition + gp.Squirrels.solidArea.y;
 
     switch (enemy.direction) {
     case "up":
       enemy.solidArea.y -= enemy.speed;
-      if (enemy.solidArea.intersects(gp.Squirrel.solidArea)) {
+      if (enemy.solidArea.intersects(gp.Squirrels.solidArea)) {
         enemy.collisionOn = true;
         touchPlayer = true;
       }
       break;
     case "down":
       enemy.solidArea.y += enemy.speed;
-      if (enemy.solidArea.intersects(gp.Squirrel.solidArea)) {
+      if (enemy.solidArea.intersects(gp.Squirrels.solidArea)) {
         enemy.collisionOn = true;
         touchPlayer = true;
       }
       break;
     case "left":
       enemy.solidArea.x -= enemy.speed;
-      if (enemy.solidArea.intersects(gp.Squirrel.solidArea)) {
+      if (enemy.solidArea.intersects(gp.Squirrels.solidArea)) {
         enemy.collisionOn = true;
         touchPlayer = true;
       }
       break;
     case "right":
       enemy.solidArea.x += enemy.speed;
-      if (enemy.solidArea.intersects(gp.Squirrel.solidArea)) {
+      if (enemy.solidArea.intersects(gp.Squirrels.solidArea)) {
         enemy.collisionOn = true;
         touchPlayer = true;
       }
@@ -249,8 +249,8 @@ public class CollisionChecker {
     }
     enemy.solidArea.x = enemy.solidAreaDefaultX;
     enemy.solidArea.y = enemy.solidAreaDefaultY;
-    gp.Squirrel.solidArea.x = gp.Squirrel.solidAreaDefaultX;
-    gp.Squirrel.solidArea.y = gp.Squirrel.solidAreaDefaultY;
+    gp.Squirrels.solidArea.x = gp.Squirrels.solidAreaDefaultX;
+    gp.Squirrels.solidArea.y = gp.Squirrels.solidAreaDefaultY;
 
     return touchPlayer;
   }
@@ -307,8 +307,8 @@ public class CollisionChecker {
         break;
       }
     }
-    gp.Squirrel.solidArea.x = gp.Squirrel.solidAreaDefaultX;
-    gp.Squirrel.solidArea.y = gp.Squirrel.solidAreaDefaultY;
+    gp.Squirrels.solidArea.x = gp.Squirrels.solidAreaDefaultX;
+    gp.Squirrels.solidArea.y = gp.Squirrels.solidAreaDefaultY;
   }
 }
 

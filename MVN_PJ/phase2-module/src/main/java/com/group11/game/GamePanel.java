@@ -1,10 +1,7 @@
 package com.group11.game;
 
 import javax.swing.JPanel;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D; 
-import java.awt.Color;
+
 /**
  * The GamePanel class represents the main panel for a simple game.
  * It contains all the game logic and rendering, and handles user input.
@@ -59,7 +56,7 @@ public class GamePanel extends JPanel implements Runnable{
     /**
     * Main {@code Characters} which is the {@code Squirrel}
     */
-    protected Squirrel squirrel = new Squirrel(this, key);
+    protected Squirrels Squirrels = new Squirrels(this, key);
 
     /**
     * {@code TileManger}
