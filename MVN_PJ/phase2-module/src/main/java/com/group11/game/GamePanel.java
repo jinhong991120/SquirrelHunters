@@ -76,7 +76,7 @@ public class GamePanel extends JPanel implements Runnable{
     protected UI ui = new UI (this);
     
 
-    protected Items Acorn[] = new Items[10];
+    protected Items rewards[] = new Items[10];
 
 
     protected Items potato[] = new Items[10];
