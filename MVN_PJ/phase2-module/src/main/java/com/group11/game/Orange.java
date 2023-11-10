@@ -11,7 +11,7 @@ public class Orange extends Items{
     public Orange() {
         name = "Orange"; 
         try {
-            image = ImageIO.read(getClass().getResourceAsStream("directory")); 
+            image = ImageIO.read(getClass().getResourceAsStream("/UI_image/Orange.png")); 
         }catch(IOException i) {
             i.printStackTrace(); 
         }
