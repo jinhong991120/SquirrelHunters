@@ -19,7 +19,7 @@ public class Potato extends Items{
         }
         
         collision = true; 
-        score = -100; 
+        score = 100; 
     }
 
     public void draw(Graphics2D g2, GamePanel gp){
