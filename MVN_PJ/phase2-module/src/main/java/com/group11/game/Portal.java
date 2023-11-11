@@ -1,5 +1,6 @@
 /**
  * extends items class for portal
+ * 
  */
 package com.group11.game;
 
