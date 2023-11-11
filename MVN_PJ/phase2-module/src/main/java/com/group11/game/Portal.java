@@ -16,12 +16,12 @@ public class Portal extends Items{
             i.printStackTrace(); 
         }
         collision = true;
+        score = 0; 
     }
 
     public void draw(Graphics2D g2, GamePanel gp){
-        int pos_x = 0; 
-        int pos_y = 0;
     
-        g2.drawImage(image, pos_x, pos_y, null);
+        g2.drawImage(image, xPosition, yPosition, gp.tileSize, gp.tileSize, null);
+
     }
 }
