@@ -3,22 +3,16 @@
 # @file
 # @version 0.1
 
-MVN=mvn
-
-.PHONY: all build run test clean
+CC=mvn
 
 all: build
 
 build:
-	cd ./SquirrelHunters && $(MVN) clean compile package
+	cd ./SquirrelHunters/phase2-module && $(CC) clean compile package
 
 run:
-	run:
-	cd ./SquirrelHunters/SquirrelHunters && mvn clean compile package && cd ./target && java -jar SquirrelHunters-1.0-SNAPSHOT.jar
-
+	cd ./SquirrelHunters/phase2-module/target && java -jar SquirrelHunters-1.0-SNAPSHOT.jar
 
 test:
-	cd ./SquirrelHunters && $(MVN) clean test
+	cd ./SquirrelHunters/phase2-module && $(CC) clean test
 
-clean:
-	cd ./SquirrelHunters && $(MVN) clean
