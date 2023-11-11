@@ -140,8 +140,8 @@ public class GamePanel extends JPanel implements Runnable{
      * Resets the character's positions and values.
      */
     public void retry() {
-        student.setDefaultValues();
-        student.restoreHealthAndScore();
+        squirrel.setDefaultValues();
+        squirrel.restoreHealthAndScore();
         setter.setObject();
         setter.setRaccoon();
     }
@@ -176,7 +176,7 @@ public class GamePanel extends JPanel implements Runnable{
     public void update(){
         if(state == State.Game) {
             // PLAYER
-            student.update();
+            squirrel.update();
 
             //ENEMIES
             for (int i = 0; i < raccoons.length; i++) {
@@ -211,7 +211,7 @@ public class GamePanel extends JPanel implements Runnable{
                     rewards[i].draw(g2, this);
                 
                 // create portal if coffees are all collected
-                if (student.collectAllChecker()){
+                if (squirrel.collectAllChecker()){
                     portal.xPosition = 38 * this.tileSize;
                     portal.yPosition = 1 * this.tileSize;
                     portal.draw(g2, this);
@@ -234,7 +234,7 @@ public class GamePanel extends JPanel implements Runnable{
             ui.draw(g2);
             
             //PLAYER
-            student.draw(g2);
+            squirrel.draw(g2);
         }
         g2.dispose();   // dispose of this graphics contxt and release any system resources that it is using  
     }
