@@ -95,10 +95,10 @@ public class UI {
 
     // HEART
     g2.drawImage(heartImage, 16, 3, 48, 48, null);
-    g2.drawString("x " + gp.squirrel.heart, 74, 40);
+    g2.drawString("x " + gp.Squirrels.heart, 74, 40);
 
     // SCORE
-    g2.drawString("Score: " + gp.squirrel.score, 16, 80);
+    g2.drawString("Score: " + gp.Squirrels.score, 16, 80);
 
     // Draw Time Elapsed
     if (gp.state == State.Game) {

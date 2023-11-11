@@ -15,14 +15,14 @@ public class Squirrels extends Characters {
     GamePanel gp;
     KeyHandler key;
     public int score= 0;
-    public int acornCount = 0;
-    public int health = 3;
+    public int numCollected = 0;
+    public int heart = 3;
 
     public Squirrels(GamePanel gp, KeyHandler key){
         this.gp = gp;
         this.key = key;
 
-        solidArea = new Rectangle(0, 0, 32, 32);
+        solidArea = new Rectangle(8, 16, 32, 32);
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
 
@@ -33,16 +33,22 @@ public class Squirrels extends Characters {
 
     public void setDefault(){
 
-        //still need something for get start position
-        //xPosition=  ;
-        //yPosition=  ;
+        xPosition = 7 * gp.tileSize ;
+        yPosition = 1 * gp.tileSize;
 
-        speed = 4;
-        health = 3;
+        speed = 2;
+        heart = 3;
         score = 0;
-        acornCount = 0;
-        direction = "right";
+        numCollected = 0;
+        direction = "down";
 
+    }
+
+    public void restoreHealthAndScore() {
+        heart = 3;
+        score = 0;
+        invincible = false;
+        numCollected = 0;
     }
 
     private void getSquirrelImage(){
@@ -60,26 +66,106 @@ public class Squirrels extends Characters {
         }
     }
 
-    public void update(){
-        checkHealth();
+    /**
+     * Increases score when picking up items.
+     *
+     * @param index index of the item on rewards array
+     */
+    public void pickUpRewards(int index){
+        if (index != -1){
+            score += gp.rewards[index].score;
 
-        if( key.up || key.down || key.left || key.right){
+            // Double the speed if Orange is collected
+            if (gp.rewards[index].name == "Orange")
+                speed *= 2;
+            else{
+                numCollected++;
+            }
+            gp.rewards[index] = null;
+        }
+    }
+    /**
+     * Decreases score when picking up items.
+     *
+     * @param index index of the item on potato array
+     */
+    public void pickUpPotato(int index){
+        if (index != -1){
+            score -= gp.potato[index].score;
+            gp.potato[index] = null;
+            if (speed > 1) speed -= 1;
+        }
+    }
+    /**
+     * Decreases player's health when it contacts and enemy.
+     *
+     * @param index index of the item on items array
+     */
+    public void interactEnemy(int index){
+        if (index != -1){
+            if (invincible == false) {
+                heart -= 1;
+                invincible = true;
+            }
+        }
+    }
+
+    /**
+     * Checks if all the rewards are collected.
+     *
+     * @return true if all rewards are collected, false otherwise
+     */
+    public boolean collectAllChecker(){
+        if (numCollected == 9){
+            return true;
+        }
+        return false;
+    }
+    public void update(){
+
+        if( key.up || key.down || key.left || key.right) {
             getNewDir();
+            //check collision
             collisionOn = false;
             gp.cChecker.checkTile(this);
 
+            // Rewards collision
+            int rewardIndex = gp.cChecker.checkObjects(this, true, gp.rewards);
+            pickUpRewards(rewardIndex);
+
+            // potato collision
+            int potatoIndex = gp.cChecker.checkObjects(this, true, gp.potato);
+            pickUpPotato(potatoIndex);
+
+            // Enemy collision
+            int enemyIndex = gp.cChecker.checkEntity(this);
+            interactEnemy(enemyIndex);
+
+            if (collectAllChecker()){
+                gp.cChecker.checkPortal(this, true, gp.portal);
+            }
+            moveChar();
             changeSprite();
+        }
 
-            //still working on here
+        checkAlive();
 
+        if (invincible == true) {
+            invincibleCounter++;
+            if (invincibleCounter > 60) {
+                invincible = false;
+                invincibleCounter = 0;
+            }
         }
     }
 
-    private void checkHealth(){
-        if(health == 0){
+    private void checkAlive(){
+        if(heart <= 0 || score < 0){
             //add the state:game over
+            gp.state = State.Over;
         }
     }
+
 
     private void getNewDir(){
         if(key.up)
@@ -92,10 +178,24 @@ public class Squirrels extends Characters {
             direction = "right";
     }
 
+    public void moveChar(){
+        if (collisionOn == false){
+            switch(direction){
+                case "up": yPosition -= speed;
+                    break;
+                case "down": yPosition += speed;
+                    break;
+                case "right": xPosition += speed;
+                    break;
+                case "left": xPosition -= speed;
+                    break;
+            }
+        }
+    }
     private void changeSprite(){
         spriteCounter++;
 
-        if(spriteCounter>10){
+        if(spriteCounter>15){
             if (spriteNumber == 1)
                 spriteNumber = 2;
             else
@@ -142,7 +242,16 @@ public class Squirrels extends Characters {
                     image = right2;
                 }
         }
+
+        // Visualizes that damage was taken
+        if (invincible == true) {
+            graphic2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
+        }
+
         graphic2.drawImage(image,  gp.tileSize, gp.tileSize, null);
+
+        graphic2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
+
     }
 
 

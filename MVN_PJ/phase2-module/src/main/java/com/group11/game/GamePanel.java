@@ -1,6 +1,7 @@
 package com.group11.game;
 
 import javax.swing.JPanel;
+import java.awt.*;
 
 /**
  * The GamePanel class represents the main panel for a simple game.
@@ -140,8 +141,8 @@ public class GamePanel extends JPanel implements Runnable{
      * Resets the character's positions and values.
      */
     public void retry() {
-        squirrel.setDefaultValues();
-        squirrel.restoreHealthAndScore();
+        Squirrels.setDefault();
+        Squirrels.restoreHealthAndScore();
         setter.setObject();
         setter.setRaccoon();
     }
@@ -176,7 +177,7 @@ public class GamePanel extends JPanel implements Runnable{
     public void update(){
         if(state == State.Game) {
             // PLAYER
-            squirrel.update();
+            Squirrels.update();
 
             //ENEMIES
             for (int i = 0; i < raccoons.length; i++) {
@@ -211,7 +212,7 @@ public class GamePanel extends JPanel implements Runnable{
                     rewards[i].draw(g2, this);
                 
                 // create portal if coffees are all collected
-                if (squirrel.collectAllChecker()){
+                if (Squirrels.collectAllChecker()){
                     portal.xPosition = 38 * this.tileSize;
                     portal.yPosition = 1 * this.tileSize;
                     portal.draw(g2, this);
@@ -234,7 +235,7 @@ public class GamePanel extends JPanel implements Runnable{
             ui.draw(g2);
             
             //PLAYER
-            squirrel.draw(g2);
+            Squirrels.draw(g2);
         }
         g2.dispose();   // dispose of this graphics contxt and release any system resources that it is using  
     }

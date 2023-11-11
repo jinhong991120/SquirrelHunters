@@ -1,8 +1,8 @@
 package com.group11.game;
 
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.awt.Rectangle;
 import java.util.Random;
 
 /**
@@ -26,8 +26,13 @@ public abstract class Characters {
     public Rectangle solidArea;
     public int solidAreaDefaultX, solidAreaDefaultY;
 
+    public boolean invincible = false;
 
+    public int invincibleCounter = 0;
 
     public boolean collisionOn = false;
 
+    public abstract void update();
+
+    public abstract void draw(Graphics2D g2);
 }
