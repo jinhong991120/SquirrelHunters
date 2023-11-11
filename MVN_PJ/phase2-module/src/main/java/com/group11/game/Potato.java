@@ -13,7 +13,7 @@ public class Potato extends Items{
         name = "Potato"; 
         
         try {
-            image = ImageIO.read(getClass().getResourceAsStream("directory"));
+            image = ImageIO.read(getClass().getResourceAsStream("/UI_image/potato.png"));
         }catch(IOException i) {
             i.printStackTrace(); 
         }
