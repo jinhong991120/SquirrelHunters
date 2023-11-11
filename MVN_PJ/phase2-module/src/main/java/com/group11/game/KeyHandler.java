@@ -62,7 +62,7 @@ public class KeyHandler implements KeyListener {
             //pause
             case KeyEvent.VK_ESCAPE:
                 if(!pause){
-                    //turn to pause state
+                    gp.state = State.Pause;
                 }
                 pause = true;
 
