@@ -73,7 +73,7 @@ public class TileRepresenter {
     }
     /** use when constructor is called to get map from text file */
     private void loadMap(){
-       InputStream is = getClass().getResourceAsStream("directory + .txt");
+       InputStream is = getClass().getResourceAsStream("/mapFiles/mapInfo.txt");
        Reader rd = new InputStreamReader(is);
        BufferedReader br = new BufferedReader(rd);
 
