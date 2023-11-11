@@ -12,7 +12,7 @@ public class Portal extends Items{
     public Portal() { 
         name = "Portal"; 
         try {
-            image = ImageIO.read(getClass().getResourceAsStream("directory")); 
+            image = ImageIO.read(getClass().getResourceAsStream("/UI_image/portal.png")); 
         }catch(IOException i) {
             i.printStackTrace(); 
         }
