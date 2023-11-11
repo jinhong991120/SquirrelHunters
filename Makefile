@@ -8,11 +8,11 @@ CC=mvn
 all: build
 
 build:
-	cd ./SquirrelHunters/phase2-module && $(CC) clean compile package
+	cd ./CMPT276F23_group11/MVN_PJ/phase2-module && $(CC) clean compile package
 
 run:
-	cd ./SquirrelHunters/phase2-module/target && java -jar SquirrelHunters-1.0-SNAPSHOT.jar
+	cd ./CMPT276F23_group11/MVN_PJ/phase2-module && java -jar target/phase2-module-1.0-SNAPSHOT.jar
 
 test:
-	cd ./SquirrelHunters/phase2-module && $(CC) clean test
+	cd ./CMPT276F23_group11/MVN_PJ/phase2-module && $(CC) clean test
 
