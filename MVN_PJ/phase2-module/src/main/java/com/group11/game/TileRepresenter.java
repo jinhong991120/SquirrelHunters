@@ -38,12 +38,12 @@ public class TileRepresenter {
 
           try {
 			tiles[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tile_001(1).png")) ;
-			tiles[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tile_0028.png")) ;
+			tiles[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tile_0126.png")) ;
 			tiles[1].collision = true;
 			
 	        	tiles[2].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tile_0037.png")) ;
 	        	tiles[2].collision = true;
-	        	tiles[3].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tile_0126.png")) ;
+	        	tiles[3].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tile_0028.png")) ;
 	        	tiles[3].collision = true;
 		} catch (IOException e) {
 			
