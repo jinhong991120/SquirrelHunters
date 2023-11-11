@@ -85,7 +85,7 @@ public class GamePanel extends JPanel implements Runnable{
     /**
     * Path finder
     */
-    protected Pathfinder pFinder = new Pathfinder(this);
+    protected PathFinder pFinder = new PathFinder(this);
 
     /**
     * Assset Setter

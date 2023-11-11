@@ -219,7 +219,7 @@ public class UI {
 
     // SCORE
     g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 50f));
-    text = "Score: " + gp.squirrel.score;
+    text = "Score: " + gp.Squirrels.score;
     x = getCenterX(text);
     y = gp.tileSize * 15;
     g2.drawString(text, x, y - 135);
