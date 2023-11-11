@@ -3,24 +3,25 @@
  */
 package com.group11.game;
 
-import java.io.IOException;
-
+import java.awt.Graphics2D;
 import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
 
-import java.util.Arrays;
-import java.io.Scanner;
+import javax.imageio.ImageIO;
 
-class TileRepresenter{
+import java.io.Reader;
+import java.io.InputStreamReader;
 
+public class TileRepresenter {
     private GamePanel gp;
     private int[][] mapArr;
     private Tile[] tiles;
 
     public TileRepresenter(GamePanel gp){
         this.gp = gp;
-        tiles = new ArrayList<Tile>();
-        mapArr = int[gp.maxScreenCol][gp.maxScreenRow];
+        tiles = new Tile[3];
+        mapArr = new int[gp.maxScreenCol][gp.maxScreenRow];
         getTileImage();
         loadMap();
     }
@@ -30,35 +31,36 @@ class TileRepresenter{
      */
     public void getTileImage(){ 
 
-          tiles[0] = new tile();
-          tiles[1] = new tile();
-          tiles[2] = new tile();
+          tiles[0] = new Tile();
+          tiles[1] = new Tile();
+          tiles[2] = new Tile();
 
-          tiles[0].image = imageIO.read(getClass().getResourceAsStream("directory")) ;
-          tiles[1].image = imageIO.read(getClass().getResourceAsStream("directory")) ;
-          tiles[2].image = imageIO.read(getClass().getResourceAsStream("directory")) ;
+          try {
+			tiles[0].image = ImageIO.read(getClass().getResourceAsStream("directory")) ;
+			tiles[1].image = ImageIO.read(getClass().getResourceAsStream("directory")) ;
+	        tiles[2].image = ImageIO.read(getClass().getResourceAsStream("directory")) ;
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
 
 
     }
-    /** @result = tiles being drawn from attributes in tile class */
+    /** @result = tiles being drawn from attributes in tile class
+     * 
+     * mapArr members correspond to tiles[] members
+     */
     public void draw(Graphics2D g2d){
 
-        int pos_x, pos_y = 0;
+        int pos_x = 0;
+        int pos_y = 0;
         
-        for(int i = 0; i < mapArr.length(); i++){
-            for(int j = 0; j < mapArr[].length(); j++){
+        for(int i = 0; i < gp.maxScreenCol; i++){
+            for(int j = 0; j < gp.maxScreenRow; j++){
 
-                if(mapArr[i][j] == 0){
-                    g2d.drawimage(tiles[0].image, pos_x, pos_y, gp.maxScreenCol, gp.maxScreenRow, null );
-                }
-                else if(mapArr == 1){
-                    g2d.drawimage(tiles[1].image, pos_x, pos_y, gp.maxScreenCol, gp.maxScreenRow, null );
-                }
-                else {
-                    g2d.drawimage(tiles[2].image, pos_x, pos_y, gp.maxScreenCol, gp.maxScreenRow, null );
-                }
-
-                pos_x+=gp.tileSize;
+                    g2d.drawImage(tiles[mapArr[i][j]].image, pos_x, pos_y, gp.maxScreenCol, gp.maxScreenRow, null );
+                
+                    pos_x+=gp.tileSize;
         }
         pos_y+=gp.tileSize;
         }
@@ -66,10 +68,17 @@ class TileRepresenter{
     /** use when constructor is called to get map from text file */
     private void loadMap(){
        InputStream is = getClass().getResourceAsStream("directory + .txt");
-       BufferedReader br = new BufferedReader(new InputStream(is));
+       Reader rd = new InputStreamReader(is);
+       BufferedReader br = new BufferedReader(rd);
 
        for(int r = 0; r<gp.maxScreenRow; r++){
-            String line_r = br.readline();
+            String line_r = null;
+			try {
+				line_r = br.readLine();
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+			}
 
             for(int c = 0;c<gp.maxScreenCol;c++){
                 String map_format[] = line_r.split(" ");
@@ -79,12 +88,11 @@ class TileRepresenter{
 
        }
            
-    br.close();
+    try {
+		br.close();
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
 
     }
-
-    
-
-
-
 }

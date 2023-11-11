@@ -55,7 +55,7 @@ public class Setter {
     int Yarrs[] = {9, 18, 5};
 
     for (int i = 0; i < 3; i++) {
-      gp.raccoons[i] = new Raccoon(gp);
+      gp.raccoons[i] = new Raccoons(gp);
       gp.raccoons[i].xPosition = Xarrs[i] * gp.tileSize;
       gp.raccoons[i].yPosition = Yarrs[i] * gp.tileSize;
     }
