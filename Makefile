@@ -13,7 +13,9 @@ build:
 	cd ./SquirrelHunters && $(MVN) clean compile package
 
 run:
-	cd ./SquirrelHunters && $(MVN) clean compile package && cd ./target && java -jar SquirrelHunters-1.0-SNAPSHOT.jar
+	run:
+	cd ./SquirrelHunters/SquirrelHunters && mvn clean compile package && cd ./target && java -jar SquirrelHunters-1.0-SNAPSHOT.jar
+
 
 test:
 	cd ./SquirrelHunters && $(MVN) clean test
