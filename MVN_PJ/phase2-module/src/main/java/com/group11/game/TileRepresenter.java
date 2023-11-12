@@ -14,9 +14,9 @@ import java.io.Reader;
 import java.io.InputStreamReader;
 
 public class TileRepresenter {
-    private GamePanel gp;
+    public GamePanel gp;
     public int[][] mapArr;
-    private Tile[] tiles;
+    public Tile[] tiles;
 
     public TileRepresenter(GamePanel gp){
         this.gp = gp;
