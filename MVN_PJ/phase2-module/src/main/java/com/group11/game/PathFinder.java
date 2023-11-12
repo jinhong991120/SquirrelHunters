@@ -146,7 +146,7 @@ public class PathFinder {
             // set solid node
             // check tiles
             int tileNum = gp.tr.mapArr[col][row];
-            if (gp.tr.tiles.get(tileNum).collision == true) {
+            if (gp.tr.tiles[tileNum].collision == true) {
                 node[col][row].solid = true;
             }
 
