@@ -69,7 +69,7 @@ public class GamePanel extends JPanel implements Runnable{
     /**
     * {@code Sound} to play music 
     */
-    //protected Sound sound = new Sound();
+    protected Sound sound = new Sound();
 
     /**
     * {@code UI} on screen
