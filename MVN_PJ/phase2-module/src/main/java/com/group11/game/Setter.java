@@ -28,12 +28,12 @@ public class Setter {
     int YPositions[] = {22, 7, 3, 1, 13, 16, 12, 14, 11};
 
     for (int i = 0; i < 9; i++) {
-      gp.acorns[i] = new Acorn();
-      gp.acorns[i].xPosition = XPositions[i] * gp.tileSize;
-      gp.acorns[i].yPosition = YPositions[i] * gp.tileSize;
+      gp.rewards[i] = new Acorn();
+      gp.rewards[i].xPosition = XPositions[i] * gp.tileSize;
+      gp.rewards[i].yPosition = YPositions[i] * gp.tileSize;
     }
 
-    /* 
+     
     // set up Potatoes
     int XPositions2[] = {5, 12, 30, 36};
     int YPositions2[] = {6, 8, 19, 15};
@@ -43,7 +43,7 @@ public class Setter {
       gp.potato[i].xPosition = XPositions2[i] * gp.tileSize;
       gp.potato[i].yPosition = YPositions2[i] * gp.tileSize;
     }
-     */
+     
   }
  
 
