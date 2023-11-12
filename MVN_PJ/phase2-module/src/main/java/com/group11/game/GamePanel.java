@@ -204,7 +204,7 @@ public class GamePanel extends JPanel implements Runnable{
         }
         else {
             //TITLE
-            tm.draw(g2);
+            tr.draw(g2);
 
             // rewards and portal 
             for (int i = 0; i < rewards.length; i++){
