@@ -69,7 +69,7 @@ public class GamePanel extends JPanel implements Runnable{
     /**
     * {@code Sound} to play music 
     */
-    protected Sound sound = new Sound();
+    //protected Sound sound = new Sound();
 
     /**
     * {@code UI} on screen
@@ -126,7 +126,7 @@ public class GamePanel extends JPanel implements Runnable{
         setter.setObject();
         setter.setRaccoon();
         state = State.Title;
-        playMusic(1);
+        //playMusic(1);
     }
 
     /**
@@ -239,7 +239,7 @@ public class GamePanel extends JPanel implements Runnable{
         }
         g2.dispose();   // dispose of this graphics contxt and release any system resources that it is using  
     }
-
+    /*
     /**
      * Play the music
      *
@@ -258,4 +258,5 @@ public class GamePanel extends JPanel implements Runnable{
     {
         sound.stop();
     }
+    */
 }
