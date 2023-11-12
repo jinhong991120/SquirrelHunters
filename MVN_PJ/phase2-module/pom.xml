@@ -29,7 +29,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.group11.game.App</mainClass>
+                          <mainClass>com.group11.game.Launcher</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

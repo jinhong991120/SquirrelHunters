@@ -69,7 +69,7 @@ public class GamePanel extends JPanel implements Runnable{
     /**
     * {@code Sound} to play music 
     */
-    protected Sound sound = new Sound();
+   // protected Sound sound = new Sound();
 
     /**
     * {@code UI} on screen
@@ -126,7 +126,7 @@ public class GamePanel extends JPanel implements Runnable{
         setter.setObject();
         setter.setRaccoon();
         state = State.Title;
-        playMusic(1);
+       // playMusic(1);
     }
 
     /**
@@ -245,20 +245,20 @@ public class GamePanel extends JPanel implements Runnable{
      *
      * @param i index number of target music stream
      */
-    public void playMusic(int i)
-    {
-        sound.setFile(i);
-        sound.play();
-        sound.loop();
-    }
+    // public void playMusic(int i)
+    // {
+    //     sound.setFile(i);
+    //     sound.play();
+    //     sound.loop();
+    // }
     
-    /**
-     * Stop the music
-     */
-    public void stopMusic()
-    {
-        sound.stop();
-    }
+    // /**
+    //  * Stop the music
+    //  */
+    // public void stopMusic()
+    // {
+    //     sound.stop();
+    // }
     
     
 }

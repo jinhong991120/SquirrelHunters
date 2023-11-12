@@ -66,8 +66,8 @@ public class KeyHandler implements KeyListener {
                 case KeyEvent.VK_ENTER:
                     if(gp.ui.order == 0){
                         gp.state = State.Game;
-                        gp.stopMusic();
-                        gp.playMusic(0);
+                      //  gp.stopMusic();
+                      //  gp.playMusic(0);
                     }
                     if(gp.ui.order == 1){
                         System.exit(0);

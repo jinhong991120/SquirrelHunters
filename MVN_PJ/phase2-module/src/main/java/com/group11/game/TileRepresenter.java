@@ -37,7 +37,7 @@ public class TileRepresenter {
           tiles[3] = new Tile();
 
           try {
-			tiles[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tile_001(1).png")) ;
+			tiles[0].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tile_0001(1).png")) ;
 			tiles[1].image = ImageIO.read(getClass().getResourceAsStream("/tiles/tile_0126.png")) ;
 			tiles[1].collision = true;
 			
@@ -61,8 +61,8 @@ public class TileRepresenter {
         int pos_x = 0;
         int pos_y = 0;
         
-        for(int i = 0; i < gp.maxScreenCol; i++){
-            for(int j = 0; j < gp.maxScreenRow; j++){
+        for(int i = 0; i <= gp.maxScreenCol; i++){
+            for(int j = 0; j <= gp.maxScreenRow; j++){
             	
                 g2d.drawImage(tiles[mapArr[i][j]].image, pos_x, pos_y, gp.maxScreenCol, gp.maxScreenRow, null );
                 
