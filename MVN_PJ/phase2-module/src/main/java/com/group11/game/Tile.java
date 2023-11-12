@@ -1,8 +1,8 @@
 /**
  * 
  */
-import game.*;/
-package game;
+
+package com.group11.game;
 
 public class Tile{
     /** Attributes of Tile to help represent the map */
