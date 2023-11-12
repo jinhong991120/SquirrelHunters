@@ -42,8 +42,8 @@ public class CollisionChecker {
       topRow = (top - entity.speed) / gp.tileSize;
       tileNum1 = gp.tr.mapArr[leftCol][topRow];
       tileNum2 = gp.tr.mapArr[rightCol][topRow];
-      if (gp.tr.tiles.get(tileNum1).collision == true ||
-          gp.tr.tiles.get(tileNum2).collision == true || top - 10 < 0) {
+      if (gp.tr.tiles[tileNum1].collision == true ||
+          gp.tr.tiles[tileNum2].collision == true || top - 10 < 0) {
         entity.collisionOn = true;
       }
       break;
@@ -51,8 +51,8 @@ public class CollisionChecker {
       botRow = (bot + entity.speed) / gp.tileSize;
       tileNum1 = gp.tr.mapArr[leftCol][botRow];
       tileNum2 = gp.tr.mapArr[rightCol][botRow];
-      if (gp.tr.tiles.get(tileNum1).collision == true ||
-          gp.tr.tiles.get(tileNum2).collision == true ||
+      if (gp.tr.tiles[tileNum1].collision == true ||
+          gp.tr.tiles[tileNum2].collision == true ||
           bot + 10 > gp.screenHeight) {
         entity.collisionOn = true;
       }
@@ -61,8 +61,8 @@ public class CollisionChecker {
       leftCol = (left - entity.speed) / gp.tileSize;
       tileNum1 = gp.tr.mapArr[leftCol][topRow];
       tileNum2 = gp.tr.mapArr[leftCol][botRow];
-      if (gp.tr.tiles.get(tileNum1).collision == true ||
-          gp.tr.tiles.get(tileNum2).collision == true || left - 5 < 0) {
+      if (gp.tr.tiles[tileNum1].collision == true ||
+          gp.tr.tiles[tileNum2].collision == true || left - 5 < 0) {
         entity.collisionOn = true;
       }
       break;
@@ -70,8 +70,8 @@ public class CollisionChecker {
       rightCol = (right + entity.speed) / gp.tileSize;
       tileNum1 = gp.tr.mapArr[rightCol][topRow];
       tileNum2 = gp.tr.mapArr[rightCol][botRow];
-      if (gp.tr.tiles.get(tileNum1).collision == true ||
-          gp.tr.tiles.get(tileNum2).collision == true ||
+      if (gp.tr.tiles[tileNum1].collision == true ||
+          gp.tr.tiles[tileNum2].collision == true ||
           right + 10 > gp.screenWidth) {
         entity.collisionOn = true;
       }
