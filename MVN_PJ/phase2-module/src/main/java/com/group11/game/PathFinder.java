@@ -59,7 +59,7 @@ public class PathFinder {
      * 
      * @param gp the target GamePanel
      */
-    public Pathfinder(GamePanel gp) {
+    public PathFinder(GamePanel gp) {
         this.gp = gp;
         instantiateNode();
     }

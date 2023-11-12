@@ -204,7 +204,7 @@ public class GamePanel extends JPanel implements Runnable{
         }
         else {
             //TITLE
-            tm.draw(g2);
+            tr.draw(g2);
 
             // rewards and portal 
             for (int i = 0; i < rewards.length; i++){
@@ -219,10 +219,10 @@ public class GamePanel extends JPanel implements Runnable{
                 }
             }
 
-            //PUNISHMENTS
+            //Potatoes
             for (int i = 0; i < rewards.length; i++){
-                if (punishments[i] != null)
-                punishments[i].draw(g2, this);
+                if (potato[i] != null)
+                potato[i].draw(g2, this);
             }
             
             //ENEMIES
