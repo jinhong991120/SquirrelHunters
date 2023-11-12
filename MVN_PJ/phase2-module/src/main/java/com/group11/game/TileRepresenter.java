@@ -3,15 +3,14 @@
  */
 package com.group11.game;
 
-import java.awt.Graphics2D;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 
-import java.io.Reader;
-import java.io.InputStreamReader;
 
 public class TileRepresenter {
     public GamePanel gp;
@@ -26,6 +25,8 @@ public class TileRepresenter {
         loadMap();
     }
 
+    
+    private boolean drawPath = false;
     /**
      * purpose : gets and sets images
      */
@@ -56,49 +57,68 @@ public class TileRepresenter {
      * 
      * mapArr members correspond to tiles[] members
      */
-    public void draw(Graphics2D g2d){
+    public void draw(Graphics2D g2){
+        // put tiles on the panel
+        int col = 0;
+        int row = 0;   
+        int x = 0;
+        int y = 0;
 
-        int pos_x = 0;
-        int pos_y = 0;
-        
-        for(int i = 0; i <= gp.maxScreenCol; i++){
-            for(int j = 0; j <= gp.maxScreenRow; j++){
-            	
-                g2d.drawImage(tiles[mapArr[i][j]].image, pos_x, pos_y, gp.maxScreenCol, gp.maxScreenRow, null );
-                
-                    pos_x+=gp.tileSize;
+        while (col < gp.maxScreenCol && row < gp.maxScreenRow){
+
+            int tileNum = mapArr[col][row];
+
+            g2.drawImage(tiles[tileNum].image, x,y, gp.tileSize, gp.tileSize, null);
+            col++;
+            x+=gp.tileSize;
+            if (col == gp.maxScreenCol){
+                col = 0;
+                x = 0;
+                row++;
+                y+= gp.tileSize;
+            }
         }
-        pos_y+=gp.tileSize;
+
+        if (drawPath == true) {
+            g2.setColor(new Color(255, 0, 0, 70));
+
+            for (int i = 0; i < gp.pFinder.pathList.size(); i++) {
+
+                int mapX = gp.pFinder.pathList.get(i).col * gp.tileSize;
+                int mapY = gp.pFinder.pathList.get(i).row * gp.tileSize;
+
+                g2.fillRect(mapX, mapY, 32, 32);
+
+            }
         }
     }
     /** use when constructor is called to get map from text file */
     private void loadMap(){
-       InputStream is = getClass().getResourceAsStream("/mapFiles/mapInfo.txt");
-       Reader rd = new InputStreamReader(is);
-       BufferedReader br = new BufferedReader(rd);
+        try{
+            InputStream is = getClass().getResourceAsStream("/mapFiles/mapInfo.txt");
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
-       for(int r = 0; r<gp.maxScreenRow; r++){
-            String line_r = null;
-			try {
-				line_r = br.readLine();
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-			}
+            int col = 0;
+            int row = 0;
 
-            for(int c = 0;c<gp.maxScreenCol;c++){
-                String map_format[] = line_r.split(" ");
-                int ind_tile = Integer.parseInt(map_format[c]);
-                mapArr[c][r]=ind_tile;
+            while (col < gp.maxScreenCol && row < gp.maxScreenRow){
+                String line = br.readLine();
+
+                while (col < gp.maxScreenCol){
+                    String number[] = line.split(" ");
+
+                    int num = Integer.parseInt(number[col]);
+                    mapArr[col][row] = num;
+                    col++;
+                }
+                if (col >= gp.maxScreenCol){
+                    col = 0;
+                    row++;
+                }
             }
-
-       }
-           
-    try {
-		br.close();
-	} catch (IOException e) {
-		e.printStackTrace();
-	}
-
+            br.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

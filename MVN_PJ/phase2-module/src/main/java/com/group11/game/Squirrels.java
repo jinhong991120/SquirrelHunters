@@ -248,7 +248,7 @@ public class Squirrels extends Characters {
             graphic2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
         }
 
-        graphic2.drawImage(image,  gp.tileSize, gp.tileSize, null);
+        graphic2.drawImage(image, xPosition, yPosition, gp.tileSize, gp.tileSize, null);
 
         graphic2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
 
