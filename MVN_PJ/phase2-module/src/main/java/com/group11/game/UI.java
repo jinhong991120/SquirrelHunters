@@ -35,7 +35,11 @@ public class UI {
   /**
    * The bufferedImage variable to load image of raccoon.
    */
-  protected BufferedImage raccoonImage;
+  protected BufferedImage raccoonImage1;
+
+  protected BufferedImage raccoonImage2;
+
+  protected BufferedImage SquirrelImage;
   /**
    * A operation variable
    */
@@ -65,14 +69,16 @@ public class UI {
           getClass().getResourceAsStream("/UI_image/titleImage.png"));
       heartImage =
           ImageIO.read(getClass().getResourceAsStream("/UI_image/heart.png"));
-
+      raccoonImage1 = ImageIO.read(getClass().getResourceAsStream("/raccoon/e1.png"));
+      raccoonImage2 = ImageIO.read(getClass().getResourceAsStream("/raccoon/e2.png"));
+      SquirrelImage = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/right2.png"));
     } catch (IOException e) {
       e.printStackTrace();
     }
 
     // Create font
     try {
-      InputStream is = getClass().getResourceAsStream("/font/Debrosee-ALPnL.ttf");
+      InputStream is = getClass().getResourceAsStream("/font/Retro_Gaming.ttf");
       retroFont = Font.createFont(Font.TRUETYPE_FONT, is);
     } catch (FontFormatException e) {
 
@@ -142,26 +148,36 @@ public class UI {
     g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 100f));
     String txt = "SQUIRREL HUNTERS";
     int x = getCenterX(txt);
-    int y = gp.tileSize * 9;
+    int y = gp.tileSize * 8;
 
-    g2.setColor(Color.gray);
+    g2.setColor(Color.darkGray);
     g2.drawString(txt, x + 5, y + 5);
     g2.setColor(Color.white);
     g2.drawString(txt, x, y);
 
+    // IMAGE OF CHARACTER
+    x = gp.screenWidth / 2 - (gp.tileSize * 2) / 2 - 600;
+    y += gp.tileSize * 2 + 60;
+
+    g2.drawImage(raccoonImage1, 135, 535, gp.tileSize * 3, gp.tileSize * 3,
+                 null);
+    g2.drawImage(raccoonImage2, 350, 550, gp.tileSize * 3, gp.tileSize * 3,
+                 null);
+    g2.drawImage(SquirrelImage,800, 600, gp.tileSize * 1, gp.tileSize * 1,
+                 null);
 
     // OPTIONS
-    g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 80f));
+    g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 60f));
     txt = "NEW GAME";
-    x = getCenterX(txt) + 150;
-    y += gp.tileSize * 2;
+    x = getCenterX(txt) + 390;
+    y += gp.tileSize * 4;
     g2.drawString(txt, x, y);
     if (order == 0) {
       g2.drawString(">", x - gp.tileSize * 3, y);
     }
 
     txt = "QUIT";
-    x = getCenterX(txt) + 150;
+    x = getCenterX(txt) + 470;
     y += gp.tileSize * 4;
     g2.drawString(txt, x, y);
     if (order == 1) {

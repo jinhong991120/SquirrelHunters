@@ -178,13 +178,15 @@ public class Raccoons extends Characters {
         spriteCounter++;
 
         if(spriteCounter>15){
-            if (spriteNumber == 1)
+            if (spriteNumber == 1){
                 spriteNumber = 2;
-            else
-                spriteNumber = 1;
-        }
-
-        spriteCounter = 0;
+            }
+                
+            else if(spriteNumber == 2){
+                spriteNumber = 1;}
+                
+            spriteCounter = 0;
+        }  
     }
 
 

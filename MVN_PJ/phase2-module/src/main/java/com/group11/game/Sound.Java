@@ -28,7 +28,7 @@ class Sound {
      * Initialize the sound URL array.
      */
     public void initializeSoundURL() {
-        String[] fileNames = {"ingameMusic.mp3", "titleMusic.mp3"};
+        String[] fileNames = {"ingameMusic.wav", "titleMusic.wav"};
         soundURL = new URL[fileNames.length];
 
         for (int i = 0; i < fileNames.length; i++) {

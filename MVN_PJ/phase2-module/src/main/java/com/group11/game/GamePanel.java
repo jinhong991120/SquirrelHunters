@@ -1,7 +1,10 @@
 package com.group11.game;
 
 import javax.swing.JPanel;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D; 
+import java.awt.Color;
 
 /**
  * The GamePanel class represents the main panel for a simple game.
@@ -69,7 +72,7 @@ public class GamePanel extends JPanel implements Runnable{
     /**
     * {@code Sound} to play music 
     */
-   // protected Sound sound = new Sound();
+    protected Sound sound = new Sound();
 
     /**
     * {@code UI} on screen
@@ -126,7 +129,7 @@ public class GamePanel extends JPanel implements Runnable{
         setter.setObject();
         setter.setRaccoon();
         state = State.Title;
-       // playMusic(1);
+        playMusic(1);
     }
 
     /**
@@ -244,21 +247,21 @@ public class GamePanel extends JPanel implements Runnable{
      * Play the music
      *
      * @param i index number of target music stream
-     */
-    // public void playMusic(int i)
-    // {
-    //     sound.setFile(i);
-    //     sound.play();
-    //     sound.loop();
-    // }
+    */
+    public void playMusic(int i)
+     {
+         sound.setFile(i);
+         sound.play();
+         sound.loop();
+     }
     
-    // /**
+   
     //  * Stop the music
     //  */
-    // public void stopMusic()
-    // {
-    //     sound.stop();
-    // }
+     public void stopMusic()
+     {
+         sound.stop();
+     }
     
     
 }

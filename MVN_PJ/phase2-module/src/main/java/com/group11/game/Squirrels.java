@@ -196,13 +196,16 @@ public class Squirrels extends Characters {
         spriteCounter++;
 
         if(spriteCounter>15){
-            if (spriteNumber == 1)
+            if (spriteNumber == 1){
                 spriteNumber = 2;
-            else
+            }
+                
+            else if(spriteNumber == 2){
                 spriteNumber = 1;
-        }
-
-        spriteCounter = 0;
+            }
+                
+            spriteCounter = 0;
+        }  
     }
 
 
