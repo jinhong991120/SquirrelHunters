@@ -32,6 +32,11 @@ public class Setter {
       gp.rewards[i].xPosition = XPositions[i] * gp.tileSize;
       gp.rewards[i].yPosition = YPositions[i] * gp.tileSize;
     }
+    
+    // set up Orange
+    gp.rewards[9] = new Orange();
+    gp.rewards[9].xPosition = 15 * gp.tileSize;
+    gp.rewards[9].yPosition = 22 * gp.tileSize;
 
      
     // set up Potatoes
