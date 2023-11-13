@@ -1,0 +1,70 @@
+@options
+@argfile
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java;C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/target/javadoc'
+-docencoding
+'UTF-8'
+-doctitle
+'phase2-module 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' 'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'phase2-module 1.0-SNAPSHOT API'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Acorn.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Characters.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/CollisionChecker.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/GamePanel.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Items.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/KeyHandler.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Launcher.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Node.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Orange.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/PathFinder.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Portal.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Potato.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Raccoons.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Setter.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Sound.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Squirrels.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/State.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Stopwatch.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/Tile.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/TileRepresenter.java'
+'C:/Users/홍진의/CMPT276F23_group11/MVN_PJ/phase2-module/src/main/java/com/group11/game/UI.java'
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\src\main\java = 1699843903574
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\generated-sources\annotations = 1699843921937
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\allclasses-index.html = 1699843925525
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\allpackages-index.html = 1699843925527
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\constant-values.html = 1699843925440
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\copy.svg = 1699843925562
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\element-list = 1699843925424
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\help-doc.html = 1699843925557
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\index-all.html = 1699843925548
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\index.html = 1699843925551
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\jquery-ui.overrides.css = 1699843925571
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\member-search-index.js = 1699843925530
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\module-search-index.js = 1699843925528
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\overview-tree.html = 1699843925512
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\package-search-index.js = 1699843925528
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\script.js = 1699843925561
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\search-page.js = 1699843925565
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\search.html = 1699843925550
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\search.js = 1699843925564
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\serialized-form.html = 1699843925447
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\stylesheet.css = 1699843925559
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\tag-search-index.js = 1699843925530
+C:\Users\홍진의\CMPT276F23_group11\MVN_PJ\phase2-module\target\javadoc\type-search-index.js = 1699843925529
