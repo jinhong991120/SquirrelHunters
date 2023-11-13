@@ -8,6 +8,12 @@ import java.awt.Graphics2D;
 import javax.imageio.ImageIO;
 
 public class Potato extends Items{
+    /*
+     * constructor for potato 
+     * sets name to potato
+     * sets collision to true
+     * sets score to 100
+     */
     public Potato() {
 
         name = "Potato"; 
@@ -21,6 +27,10 @@ public class Potato extends Items{
         collision = true; 
         score = 100; 
     }
+
+    /*
+     * implements the draw method for potato 
+     */
 
     public void draw(Graphics2D g2, GamePanel gp){
         g2.drawImage(image, xPosition, yPosition, gp.tileSize, gp.tileSize, null);
