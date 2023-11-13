@@ -13,6 +13,11 @@ import java.util.Random;
 public class Raccoons extends Characters {
     GamePanel gp;
 
+    /**
+     *for enemy(raccoons)
+     *
+     * @param gp for the gamepanel
+     */
     public Raccoons(GamePanel gp){
         this.gp = gp;
 
@@ -26,6 +31,9 @@ public class Raccoons extends Characters {
         getRaccoonImage();
     }
 
+    /**
+     * get the raccoon images with different directions
+     */
     private void getRaccoonImage(){
         try{
             up1 = ImageIO.read(getClass().getResourceAsStream("/raccoon/n1.png"));
@@ -152,6 +160,10 @@ public class Raccoons extends Characters {
         }
     }
 
+    /**
+     * get the update position and else for the raccoons
+     *
+     */
     public void update(){
 
         setAction();
@@ -174,6 +186,9 @@ public class Raccoons extends Characters {
         changeSprite();
     }
 
+    /**
+     * get the change of sprite of raccoon
+     */
     private void changeSprite(){
         spriteCounter++;
 
@@ -189,8 +204,10 @@ public class Raccoons extends Characters {
         }  
     }
 
-
-
+    /**
+     *
+     * @param graphic2 draw the image for raccoon
+     */
     public void draw(Graphics2D graphic2) {
         BufferedImage image = null;
 
