@@ -13,17 +13,17 @@ import java.awt.Color;
 public class GamePanel extends JPanel implements Runnable{
     
     /**
-    * The size of each tile (Deafult: 32)
+    * The size of each tile (Default: 32)
     */
     protected final int tileSize = 32;
 
     /**
-    * The number of columns (horizontal tiles) on the map (Deafult: 40)
+    * The number of columns (horizontal tiles) on the map (Default: 40)
     */
     protected final int maxScreenCol = 40;
 
     /**
-    * The number of rows (vertical tiles) on the map (Deafult: 24)
+    * The number of rows (vertical tiles) on the map (Default: 24)
     */
     protected final int maxScreenRow = 24;
 
@@ -38,12 +38,12 @@ public class GamePanel extends JPanel implements Runnable{
     protected final int screenHeight = tileSize * maxScreenRow;  
     
     /**
-    * Frames per Seconds (Deafult: 60)
+    * Frames per Second (Default: 60)
     */
     protected final int FPS = 60;
 
     /**
-    * Game {@code Thread}
+    * Game Thread
     */
     protected Thread gameThread;
     
@@ -53,29 +53,27 @@ public class GamePanel extends JPanel implements Runnable{
     protected CollisionChecker cChecker = new CollisionChecker(this);
     
     /**
-    * {@code KeyHandler} to interact with keyboard inputs
+    * KeyHandler to interact with keyboard inputs
     */
     protected KeyHandler key = new KeyHandler(this);
     
     /**
-    * Main {@code Characters} which is the {@code Squirrel}
+    * Main Characters which is the Squirrel
     */
     protected Squirrels Squirrels = new Squirrels(this, key);
 
     /**
-    * {@code TileManger}
+    * Tile Representer
     */
     protected TileRepresenter tr = new TileRepresenter(this);
     
-  
-    
     /**
-    * {@code Sound} to play music 
+    * Sound to play music 
     */
     protected Sound sound = new Sound();
 
     /**
-    * {@code UI} on screen
+    * UI on screen
     */
     protected UI ui = new UI (this);
     
@@ -91,22 +89,22 @@ public class GamePanel extends JPanel implements Runnable{
     protected PathFinder pFinder = new PathFinder(this);
 
     /**
-    * Assset Setter
+    * Asset Setter
     */
     protected Setter setter = new Setter(this);
 
     /**
-    * Enemy Raccoons {@code Characters}
+    * Enemy Raccoons Characters
     */
     protected Characters raccoons[] = new Characters[3];
 
     /**
-    * {@code Portal} to exit after all rewards ({@code Acorn}) are collected
+    * Portal to exit after all rewards (Acorn) are collected
     */
     protected Portal portal = new Portal();
 
     /**
-    * The Game {@code State}
+    * The Game State
     */
     protected State state;
     
@@ -118,12 +116,12 @@ public class GamePanel extends JPanel implements Runnable{
         this.setBackground(Color.black);
         this.setDoubleBuffered(true);
         this.addKeyListener(key);
-        this.setFocusable(true); // let GamePanel focus to recieve key input
+        this.setFocusable(true); // let GamePanel focus to receive key input
         this.state = State.Title;
     }
 
     /**
-     * Setting up the items and enemies locations on panel.
+     * Setting up the items and enemies locations on the panel.
      */
     public void setupGame(){
         setter.setObject();

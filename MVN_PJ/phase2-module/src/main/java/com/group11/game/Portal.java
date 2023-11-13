@@ -1,6 +1,5 @@
 /**
- * extends items class for portal
- * 
+ * Extends Items class for Portal.
  */
 package com.group11.game;
 
@@ -10,38 +9,57 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.awt.Rectangle;
 
+/**
+ * The Portal class represents the exit portal in the game.
+ * It extends the Items class and includes settings for the portal's image, position, and collision.
+ */
+public class Portal {
 
-public class Portal{
-        /**
-     * {@code Portal}'s X coordinate
+    /**
+     * Portal's X coordinate.
      */
     protected int xPosition;
 
     /**
-     * {@code Portal}'s X coordinate
+     * Portal's Y coordinate.
      */
     protected int yPosition;
+
     /**
-     * Check Collision
+     * Check Collision.
      */
     protected boolean collision;
 
+    /**
+     * Image for the portal.
+     */
     protected BufferedImage image;
-    
-    protected Rectangle solidArea = new Rectangle(39 * 32, 32, 16,16);
+
+    /**
+     * Solid area rectangle for collision.
+     */
+    protected Rectangle solidArea = new Rectangle(39 * 32, 32, 16, 16);
+
+    /**
+     * Default constructor for Portal.
+     * Grabs the image for the portal from the folder and sets collision to true.
+     */
     public Portal() { 
-         
         try {
             image = ImageIO.read(getClass().getResourceAsStream("/UI_image/portal.png")); 
-        }catch(IOException i) {
+        } catch(IOException i) {
             i.printStackTrace(); 
         }
         collision = true; 
     }
 
-    public void draw(Graphics2D g2, GamePanel gp){
-    
+    /**
+     * Draws the portal on the game panel.
+     *
+     * @param g2 Graphics2D object to draw on
+     * @param gp GamePanel instance
+     */
+    public void draw(Graphics2D g2, GamePanel gp) {
         g2.drawImage(image, xPosition, yPosition, gp.tileSize, gp.tileSize, null);
-
     }
 }

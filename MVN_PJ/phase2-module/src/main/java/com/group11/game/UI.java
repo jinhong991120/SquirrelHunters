@@ -8,50 +8,63 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import javax.imageio.ImageIO;
+
 /**
  * The UI class provides methods for creating and managing the user interface.
+ * It includes functionalities for loading images, setting fonts, and managing game time.
  */
 public class UI {
-  /**
-   * target {@code GamePanel}
-   */
-  protected GamePanel gp;
-  /**
-   * The target 2D graphics for UI
-   */
-  protected Graphics2D g2;
-  /**
-   * a new front with named retro.
-   */
-  protected Font retroFont;
-  /**
-   * The bufferedImage variable to load image of heart(health).
-   */
-  protected BufferedImage heartImage;
-  /**
-   * The bufferedImage variable to load background image of title page.
-   */
-  protected BufferedImage titleImage;
-  /**
-   * The bufferedImage variable to load image of raccoon.
-   */
-  protected BufferedImage raccoonImage1;
 
-  protected BufferedImage raccoonImage2;
+    /**
+     * The target GamePanel for UI.
+     */
+    protected GamePanel gp;
 
-  protected BufferedImage SquirrelImage;
-  /**
-   * A operation variable
-   */
-  protected int order = 0;
-  /**
-   * the stopwatch to record the game time.
-   */
-  protected Stopwatch stopwatch;
-  /**
-   * The variable to input the stopwatch value
-   */
-  protected double timeElapsed;
+    /**
+     * The 2D graphics context for UI.
+     */
+    protected Graphics2D g2;
+
+    /**
+     * A custom font named "retro".
+     */
+    protected Font retroFont;
+
+    /**
+     * Buffered image for the heart (health) icon.
+     */
+    protected BufferedImage heartImage;
+
+    /**
+     * Buffered image for the title page background.
+     */
+    protected BufferedImage titleImage;
+
+    /**
+     * Buffered raccoon images for titleImage.
+     */
+    protected BufferedImage raccoonImage1;
+    protected BufferedImage raccoonImage2;
+
+    /**
+     * Buffered squirrel image for titleImage.
+     */
+    protected BufferedImage squirrelImage;
+
+    /**
+     * An order variable for managing UI elements.
+     */
+    protected int order = 0;
+
+    /**
+     * Stopwatch for recording game time.
+     */
+    protected Stopwatch stopwatch;
+
+    /**
+     * The elapsed time recorded by the stopwatch.
+     */
+    protected double timeElapsed;
 
   /**
    * Constructor.
@@ -71,7 +84,7 @@ public class UI {
           ImageIO.read(getClass().getResourceAsStream("/UI_image/heart.png"));
       raccoonImage1 = ImageIO.read(getClass().getResourceAsStream("/raccoon/e1.png"));
       raccoonImage2 = ImageIO.read(getClass().getResourceAsStream("/raccoon/e2.png"));
-      SquirrelImage = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/right2.png"));
+      squirrelImage = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/right2.png"));
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -163,7 +176,7 @@ public class UI {
                  null);
     g2.drawImage(raccoonImage2, 350, 550, gp.tileSize * 3, gp.tileSize * 3,
                  null);
-    g2.drawImage(SquirrelImage,800, 600, gp.tileSize * 1, gp.tileSize * 1,
+    g2.drawImage(squirrelImage,800, 600, gp.tileSize * 1, gp.tileSize * 1,
                  null);
 
     // OPTIONS
