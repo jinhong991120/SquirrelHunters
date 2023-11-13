@@ -14,10 +14,25 @@ import java.io.IOException;
 public class Squirrels extends Characters {
     GamePanel gp;
     KeyHandler key;
+    /**
+     * initial score of player
+     */
     public int score= 0;
+    /**
+     * initial num of items
+     */
     public int numCollected = 0;
+    /**
+     * initial heart at the begining
+     */
     public int heart = 3;
 
+    /**
+     * for the player(squirrels)
+     *
+     * @param gp for gamepanel
+     * @param key for entered from keyboard
+     */
     public Squirrels(GamePanel gp, KeyHandler key){
         this.gp = gp;
         this.key = key;
@@ -31,6 +46,9 @@ public class Squirrels extends Characters {
 
     }
 
+    /**
+     *set default value of squirrel
+     */
     public void setDefault(){
 
         xPosition = 7 * gp.tileSize ;
@@ -44,6 +62,9 @@ public class Squirrels extends Characters {
 
     }
 
+    /**
+     * get the heart and score of player
+     */
     public void restoreHealthAndScore() {
         heart = 3;
         score = 0;
@@ -51,6 +72,10 @@ public class Squirrels extends Characters {
         numCollected = 0;
     }
 
+    /**
+     * get the images  for different directions of squirrel
+     *
+     */
     private void getSquirrelImage(){
         try{
             up1 = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/up1.png"));
@@ -121,6 +146,11 @@ public class Squirrels extends Characters {
         }
         return false;
     }
+
+    /**
+     * get the update movement snd else of the squirrel
+     *
+     */
     public void update(){
 
         if( key.up || key.down || key.left || key.right) {
@@ -159,6 +189,9 @@ public class Squirrels extends Characters {
         }
     }
 
+    /**
+     * check if the player still alive
+     */
     private void checkAlive(){
         if(heart <= 0 || score < 0){
             //add the state:game over
@@ -167,6 +200,9 @@ public class Squirrels extends Characters {
     }
 
 
+    /**
+     * get the present direction
+     */
     private void getNewDir(){
         if(key.up)
             direction = "up";
@@ -178,6 +214,9 @@ public class Squirrels extends Characters {
             direction = "right";
     }
 
+    /**
+     * set the movement func
+     */
     public void moveChar(){
         if (collisionOn == false){
             switch(direction){
@@ -192,6 +231,10 @@ public class Squirrels extends Characters {
             }
         }
     }
+
+    /**
+     * change of the sprite
+     */
     private void changeSprite(){
         spriteCounter++;
 
@@ -209,6 +252,10 @@ public class Squirrels extends Characters {
     }
 
 
+    /**
+     *
+     * @param graphic2  draw the image of squirrel
+     */
     public void draw(Graphics2D graphic2) {
         BufferedImage image = null;
 
