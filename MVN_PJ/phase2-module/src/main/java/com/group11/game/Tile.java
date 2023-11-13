@@ -1,5 +1,6 @@
 /**
- * 
+ * Class stores images and boolean value for each Tile
+ *
  */
 
 package com.group11.game;
