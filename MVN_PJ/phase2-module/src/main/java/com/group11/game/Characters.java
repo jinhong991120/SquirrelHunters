@@ -11,34 +11,69 @@ import java.util.Random;
  *
  */
 
+
 public abstract class Characters {
 
+    /**
+     * The X coordinate on the Screen of {@code Characters}
+     */
     public int xPosition;
+    /**
+     * The Y coordinate on the Screen of {@code Characters}
+     */
     public int yPosition;
+    /**
+     * The speed of {@code Characters}
+     */
     public int speed;
-
+    /**
+     * Sprite Images for {@code Characters}'s movement
+     */
     public BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
+    /**
+     * The Direction of {@code Characters}
+     */
     public String direction;
-
+    /**
+     * The number representing for sprites
+     */
     protected int spriteCounter = 0;
+    /**
+     * The number representing for sprites
+     */
     protected int spriteNumber = 1;
-
+    /**
+     * Solid Area of {@code Characters} represented by {@code Ractangle}
+     */
     public Rectangle solidArea;
+    /**
+     * The default solid area of {@code Characters}
+     */
     public int solidAreaDefaultX, solidAreaDefaultY;
-
+    /**
+     * The option of invincible
+     */
     public boolean invincible = false;
-
+    /**
+     * The counts of invincible
+     */
     public int invincibleCounter = 0;
 
     /**
      * The type of {@code Characters}, 0 for {@code Student} and 1 for {@code Raccoon}
      */
     public int type;
-
+    /**
+     * The option for collision, deafult is {@code false}
+     */
     public boolean collisionOn = false;
-
+    /**
+     * Updates characters.
+     */
     public abstract void update();
-
+    /**
+     * Action lock counter
+     */
     protected int actionLockCounter = 0;
 
     /**
@@ -61,5 +96,11 @@ public abstract class Characters {
         }
     }
 
+
+    /**
+     * Draw onto panel.
+     *
+     * @param g2 the Graphics2D object to draw on
+     */
     public abstract void draw(Graphics2D g2);
 }
