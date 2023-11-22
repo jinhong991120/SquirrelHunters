@@ -1,4 +1,5 @@
-
+# target files
+target/
 
 # IDE files (Eclipse, IntelliJ, etc.)
 .classpath
