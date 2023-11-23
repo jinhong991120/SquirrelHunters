@@ -1,4 +1,4 @@
-package com.group11;
+package com.group11.game;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
