@@ -3,12 +3,12 @@ package com.group11.game;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class PathfinderTest {
+class PathFinderTest {
 
     @Test
     public void testInstantiateNode() {
         GamePanel gp = new GamePanel();
-        Pathfinder pf = new Pathfinder(gp);
+        PathFinder pf = new PathFinder(gp);
         pf.instantiateNode();
         assertEquals(gp.maxScreenCol, pf.node.length);
         assertEquals(gp.maxScreenRow, pf.node[0].length);
@@ -17,7 +17,7 @@ class PathfinderTest {
     @Test
     public void testResetNodes() {
         GamePanel gp = new GamePanel();
-        Pathfinder pf = new Pathfinder(gp);
+        PathFinder pf = new PathFinder(gp);
         pf.instantiateNode();
         pf.node[0][0].checked = true;
         pf.node[0][0].solid = true;
@@ -41,7 +41,7 @@ class PathfinderTest {
     @Test
     public void testSetNodes() {
         GamePanel gp = new GamePanel();
-        Pathfinder pf = new Pathfinder(gp);
+        PathFinder pf = new PathFinder(gp);
         pf.instantiateNode();
         pf.setNodes(0, 0, gp.maxScreenCol-1, gp.maxScreenRow-1);
         assertNotNull(pf.startNode);
@@ -54,7 +54,7 @@ class PathfinderTest {
     @Test
     public void testGetCost() {
         GamePanel gp = new GamePanel();
-        Pathfinder pf = new Pathfinder(gp);
+        PathFinder pf = new PathFinder(gp);
         pf.instantiateNode();
         Node n = pf.node[0][0];
         pf.startNode = n;
