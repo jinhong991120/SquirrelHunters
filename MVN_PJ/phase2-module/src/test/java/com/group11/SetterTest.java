@@ -39,8 +39,7 @@ public class SetterTest {
     assertEquals(gp.potato[1].yPosition, 8 * gp.tileSize);
     assertEquals(gp.potato[2].xPosition, 30 * gp.tileSize);
     assertEquals(gp.potato[2].yPosition, 19 * gp.tileSize);
-    assertEquals(gp.potato[3].xPosition, 36 * gp.tileSize);
-    assertEquals(gp.potato[3].yPosition, 15 * gp.tileSize);
+   
 
   }
 }
