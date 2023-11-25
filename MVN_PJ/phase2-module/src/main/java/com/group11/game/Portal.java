@@ -13,7 +13,7 @@ import java.awt.Rectangle;
  * The Portal class represents the exit portal in the game.
  * It extends the Items class and includes settings for the portal's image, position, and collision.
  */
-public class Portal {
+public class Portal extends Items {
 
     /**
      * Portal's X coordinate.
@@ -28,12 +28,12 @@ public class Portal {
     /**
      * Check Collision.
      */
-    protected boolean collision;
+    public boolean collision;
 
     /**
      * Image for the portal.
      */
-    protected BufferedImage image;
+    public BufferedImage image;
 
     /**
      * Solid area rectangle for collision.
@@ -45,6 +45,8 @@ public class Portal {
      * Grabs the image for the portal from the folder and sets collision to true.
      */
     public Portal() { 
+
+         name = "Orange"; 
         try {
             image = ImageIO.read(getClass().getResourceAsStream("/UI_image/portal.png")); 
         } catch(IOException i) {
