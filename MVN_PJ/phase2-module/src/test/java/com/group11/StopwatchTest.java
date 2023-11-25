@@ -1,13 +1,19 @@
 /**
  * 
  */
-package com.group11.game;
+package com.group11;
+
+import com.group11.game.GamePanel;
+import com.group11.game.Stopwatch;
+
 
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class StopwatchTest {
+import java.io.IOException;
+
+public class StopwatchTest {
 
     private Stopwatch stopwatch;
 
@@ -41,5 +47,19 @@ class StopwatchTest {
 
     }
 
+    /** 
+     * Unit test for pause()
+     * but the timer should be greater then 0 since it waited 10 
+     */
+    @Test 
+    void testPause() throws InterruptedException { 
+
+        stopwatch.start(); 
+
+        Thread.sleep(10);
+        long time = stopwatch.elapsed(); 
+        assertTrue(time > 0); 
+
+    }
     
 }
