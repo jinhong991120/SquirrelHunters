@@ -15,7 +15,7 @@ public class KeyHandler implements KeyListener {
     /**
      * {@code Student}'s direction (true - facing direction, false otherwise)
      */
-    protected boolean up, down, right, left;
+    public boolean up, down, right, left;
 
     /**
      * Constructor.

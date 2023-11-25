@@ -15,7 +15,7 @@ public class GamePanel extends JPanel implements Runnable{
     /**
     * The size of each tile (Default: 32)
     */
-    protected final int tileSize = 32;
+    public final int tileSize = 32;
 
     /**
     * The number of columns (horizontal tiles) on the map (Default: 40)
@@ -60,7 +60,7 @@ public class GamePanel extends JPanel implements Runnable{
     /**
     * Main Characters which is the Squirrel
     */
-    protected Squirrels Squirrels = new Squirrels(this, key);
+    public Squirrels Squirrels = new Squirrels(this, key);
 
     /**
     * Tile Representer
@@ -96,7 +96,7 @@ public class GamePanel extends JPanel implements Runnable{
     /**
     * Enemy Raccoons Characters
     */
-    protected Characters raccoons[] = new Characters[3];
+    public Characters raccoons[] = new Characters[3];
 
     /**
     * Portal to exit after all rewards (Acorn) are collected
