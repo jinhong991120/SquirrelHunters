@@ -160,6 +160,7 @@ public class Raccoons extends Characters {
         }
     }
 
+
     /**
      * get the update position and else for the raccoons
      *
@@ -186,6 +187,7 @@ public class Raccoons extends Characters {
         changeSprite();
     }
 
+
     /**
      * get the change of sprite of raccoon
      */
@@ -204,6 +206,15 @@ public class Raccoons extends Characters {
         }  
     }
 
+    public String getDir(){
+        return direction;
+    }
+    public void setSpriteNum(int spriteNum) {
+        this.spriteNumber = spriteNum;
+    }
+    public int getSprite(){
+        return spriteNumber;
+    }
     /**
      *
      * @param graphic2 draw the image for raccoon

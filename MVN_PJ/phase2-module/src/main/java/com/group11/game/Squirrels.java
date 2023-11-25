@@ -135,6 +135,11 @@ public class Squirrels extends Characters {
         }
     }
 
+    public void setNumCollected(int collected) {
+        numCollected = collected;
+    }
+
+
     /**
      * Checks if all the rewards are collected.
      *
@@ -199,11 +204,14 @@ public class Squirrels extends Characters {
         }
     }
 
+    public String getDir(){
+        return  direction;
+    }
 
     /**
      * get the present direction
      */
-    private void getNewDir(){
+    public void getNewDir(){
         if(key.up)
             direction = "up";
         else if (key.down)
@@ -232,6 +240,12 @@ public class Squirrels extends Characters {
         }
     }
 
+    public void setSpriteNum(int spriteNum) {
+        this.spriteNumber = spriteNum;
+    }
+    public int getSprite(){
+        return spriteNumber;
+    }
     /**
      * change of the sprite
      */
