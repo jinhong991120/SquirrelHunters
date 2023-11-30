@@ -1,11 +1,7 @@
 /**
  * 
  */
-package com.group11;
-
-import com.group11.game.GamePanel;
-import com.group11.game.Stopwatch;
-
+package com.group11.game; 
 
 import org.junit.jupiter.api.*;
 
