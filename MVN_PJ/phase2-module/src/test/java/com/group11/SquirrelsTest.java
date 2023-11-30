@@ -83,6 +83,9 @@ class SquirrelsTest {
 
     @Test
     void update() {
+        squirrels.setDefault();
+        squirrels.update();
+
         key = new KeyHandler(gp);
         squirrels.setDefault();
         squirrels.getNewDir();

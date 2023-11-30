@@ -39,8 +39,17 @@ class RaccoonsTest {
         assertEquals(2, raccoons.speed);
     }
 
+
+    @Test
+    void raccoonsActionTest() {
+        raccoons.setAction();
+        assertEquals("down", raccoons.getDir());
+    }
+
+
     @Test
     void checkCollision() {
+
         raccoons.collisionOn = false;
         assertFalse(gp.cChecker.checkPlayer(raccoons));
 
@@ -63,6 +72,16 @@ class RaccoonsTest {
         assertEquals("left", raccoons.getDir());
         raccoons.direction = "right";
         assertEquals("right", raccoons.getDir());
+    }
+
+    @Test
+    public void update(){
+
+        raccoons.direction = "down";
+        raccoons.update();
+        assertEquals(0, raccoons.yPosition);
+        assertEquals(0, raccoons.xPosition);
+
     }
 
 
