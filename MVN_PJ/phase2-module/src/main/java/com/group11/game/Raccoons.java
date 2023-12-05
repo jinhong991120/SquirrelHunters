@@ -5,6 +5,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -36,14 +37,14 @@ public class Raccoons extends Characters {
      */
     private void getRaccoonImage(){
         try{
-            up1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/n1.png"));
-            up2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/n2.png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/s1.png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/s2.png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/w1.png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/w2.png"));
-            right1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/e1.png"));
-            right2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/e2.png"));
+            up1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/UI_image/raccoon/n1.png")));
+            up2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/UI_image/raccoon/n2.png")));
+            down1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/UI_image/raccoon/s1.png")));
+            down2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/UI_image/raccoon/s2.png")));
+            left1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/UI_image/raccoon/w1.png")));
+            left2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/UI_image/raccoon/w2.png")));
+            right1 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/UI_image/raccoon/e1.png")));
+            right2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/UI_image/raccoon/e2.png")));
         }catch (IOException i){
             i.printStackTrace();
         }
