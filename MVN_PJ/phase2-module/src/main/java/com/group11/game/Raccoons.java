@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Objects;
-import java.util.Random;
+
 
 /**
  * basic setting class for enemy(raccoon)
@@ -79,7 +79,7 @@ public class Raccoons extends Characters {
         gp.pFinder.setNodes(startCol, startRow, goalCol, goalRow);
 
         // If a path to the goal was found, determine the Raccoon's direction and move it
-        if(gp.pFinder.search() == true) {
+        if(gp.pFinder.search()) {
 
             // Get the next column and row in the path
             int nextX = gp.pFinder.pathList.get(0).col * gp.tileSize;
@@ -111,7 +111,7 @@ public class Raccoons extends Characters {
                 // Up or Left
                 direction = "up";
                 checkCollision();
-                if(collisionOn == true) {
+                if(collisionOn) {
                     direction = "left";
                 }
             }
@@ -119,7 +119,7 @@ public class Raccoons extends Characters {
                 // Up or Right
                 direction = "up";
                 checkCollision();
-                if(collisionOn == true) {
+                if(collisionOn) {
                     direction = "right";
                 }
 
@@ -128,7 +128,7 @@ public class Raccoons extends Characters {
                 // Down or Left
                 direction = "down";
                 checkCollision();
-                if(collisionOn == true) {
+                if(collisionOn) {
                     direction = "left";
                 }
             }
@@ -136,7 +136,7 @@ public class Raccoons extends Characters {
                 // Down or Right
                 direction = "down";
                 checkCollision();
-                if(collisionOn == true) {
+                if(collisionOn) {
                     direction = "right";
                 }
             }
@@ -152,8 +152,8 @@ public class Raccoons extends Characters {
         gp.cChecker.checkObjects(this, false, gp.rewards); // Check if the raccoon has collided with any reward objects
         boolean touchPlayer = gp.cChecker.checkPlayer(this); // Check if the raccoon has collided with the player
 
-        if (this.type == 1 && touchPlayer == true) {
-            if (gp.Squirrels.invincible == false) {
+        if (this.type == 1 && touchPlayer) {
+            if (!gp.Squirrels.invincible) {
                 gp.Squirrels.heart -= 1;
                 System.out.println("Enemy is hitting you!! Score: " + gp.Squirrels.score);
                 gp.Squirrels.invincible = true;
@@ -172,7 +172,7 @@ public class Raccoons extends Characters {
 
         checkCollision();
 
-        if (collisionOn == false){
+        if (!collisionOn){
             switch(direction){
                 case "up": yPosition -= speed;
                     break;

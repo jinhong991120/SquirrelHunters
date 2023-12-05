@@ -24,14 +24,14 @@ public class Squirrels extends Characters {
      */
     public int numCollected = 0;
     /**
-     * initial heart at the begining
+     * initial heart at the beginning
      */
     public int heart = 3;
 
     /**
      * for the player(squirrels)
      *
-     * @param gp for gamepanel
+     * @param gp for game panel
      * @param key for entered from keyboard
      */
     public Squirrels(GamePanel gp, KeyHandler key){
@@ -129,7 +129,7 @@ public class Squirrels extends Characters {
      */
     public void interactEnemy(int index){
         if (index != -1){
-            if (invincible == false) {
+            if (!invincible) {
                 heart -= 1;
                 invincible = true;
             }
@@ -147,10 +147,7 @@ public class Squirrels extends Characters {
      * @return true if all rewards are collected, false otherwise
      */
     public boolean collectAllChecker(){
-        if (numCollected == 9){
-            return true;
-        }
-        return false;
+        return numCollected == 9;
     }
 
     /**
@@ -186,7 +183,7 @@ public class Squirrels extends Characters {
 
         checkAlive();
 
-        if (invincible == true) {
+        if (invincible) {
             invincibleCounter++;
             if (invincibleCounter > 60) {
                 invincible = false;
@@ -227,7 +224,7 @@ public class Squirrels extends Characters {
      * set the movement func
      */
     public void moveChar(){
-        if (collisionOn == false){
+        if (!collisionOn){
             switch(direction){
                 case "up": yPosition -= speed;
                     break;
@@ -291,7 +288,7 @@ public class Squirrels extends Characters {
         }
 
         // Visualizes that damage was taken
-        if (invincible == true) {
+        if (invincible) {
             graphic2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
         }
 
