@@ -73,23 +73,23 @@ public class TileRepresenter {
      * @param g2 The Graphics2D object for drawing.
      */
     public void draw(Graphics2D g2) {
-        int col = 0;
-        int row = 0;
-        int x = 0;
-        int y = 0;
+        int tileColumn = 0;
+        int tileRow = 0;
+        int pixelX = 0;
+        int pixelY = 0;
 
-        while (col < gp.maxScreenCol && row < gp.maxScreenRow) {
-            int tileNum = mapArr[col][row];
-            g2.drawImage(tiles[tileNum].image, x, y, gp.tileSize, gp.tileSize, null);
+        while (tileColumn < gp.maxScreenCol && tileRow < gp.maxScreenRow) {
+            int tileNum = mapArr[tileColumn][tileRow];
+            g2.drawImage(tiles[tileNum].image, pixelX, pixelY, gp.tileSize, gp.tileSize, null);
 
-            col++;
-            x += gp.tileSize;
+            tileColumn++;
+            pixelX += gp.tileSize;
 
-            if (col == gp.maxScreenCol) {
-                col = 0;
-                x = 0;
-                row++;
-                y += gp.tileSize;
+            if (tileColumn == gp.maxScreenCol) {
+                tileColumn = 0;
+                pixelX = 0;
+                tileRow++;
+                pixelY += gp.tileSize;
             }
         }
 
