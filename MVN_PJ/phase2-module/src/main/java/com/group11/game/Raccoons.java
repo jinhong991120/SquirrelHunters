@@ -17,7 +17,7 @@ public class Raccoons extends Characters {
     /**
      *for enemy(raccoons)
      *
-     * @param gp for the gamepanel
+     * @param gp for the game panel
      */
     public Raccoons(GamePanel gp){
         this.gp = gp;

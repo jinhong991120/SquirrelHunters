@@ -2,7 +2,7 @@ package com.group11.game;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.Random;
+
 
 /**
  * Abstract character class representing the moving entities (squirrel and raccoon) in the game.
@@ -104,30 +104,6 @@ public abstract class Characters {
      */
     public abstract void update();
 
-    /**
-     * Action lock counter for setting the actions of Characters.
-     */
-    protected int actionLockCounter = 0;
-
-    /**
-     * Sets the actions of characters.
-     */
-    public void setAction() {
-        actionLockCounter++;
-
-        if (actionLockCounter == 90) {
-
-            Random random = new Random();
-            int i = random.nextInt(100) + 1; // Picks num from 1-100
-
-            if (i <= 25) direction = "up";
-            if (i > 25 && i <= 50) direction = "down";
-            if (i > 50 && i <= 75) direction = "left";
-            if (i > 75 && i <= 100) direction = "right";
-
-            actionLockCounter = 0;
-        }
-    }
 
     /**
      * Draws the Characters onto the panel.
