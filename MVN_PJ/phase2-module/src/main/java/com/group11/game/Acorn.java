@@ -34,6 +34,7 @@ public class Acorn extends Items {
      *
      * @param g2 The Graphics2D object to draw on.
      * @param gp The GamePanel containing the Acorn.
+     * Images are 16x16 pixels
      */
     public void draw(Graphics2D g2, GamePanel gp) {
         g2.drawImage(image, xPosition, yPosition, gp.tileSize, gp.tileSize, null);

@@ -60,6 +60,7 @@ public abstract class Items {
      * 
      * @param g2 the Graphics2D object to draw on
      * @param gp target GamePanel to draw on
+     * Images are 16x16 pixels
      */
     public abstract void draw(Graphics2D g2, GamePanel gp); 
     

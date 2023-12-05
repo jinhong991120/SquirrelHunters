@@ -36,6 +36,7 @@ public class Potato extends Items {
      *
      * @param g2 Graphics2D object to draw on
      * @param gp GamePanel instance
+     * Images are 16x16 pixels
      */
     public void draw(Graphics2D g2, GamePanel gp) {
         g2.drawImage(image, xPosition, yPosition, gp.tileSize, gp.tileSize, null);
