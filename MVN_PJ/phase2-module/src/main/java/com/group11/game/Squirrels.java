@@ -78,14 +78,14 @@ public class Squirrels extends Characters {
      */
     private void getSquirrelImage(){
         try{
-            up1 = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/up1.png"));
-            up2 = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/up2.png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/down1.png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/down2.png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/left1.png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/left2.png"));
-            right1 = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/right1.png"));
-            right2 = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/right2.png"));
+            up1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/squirrel_image/up1.png"));
+            up2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/squirrel_image/up2.png"));
+            down1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/squirrel_image/down1.png"));
+            down2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/squirrel_image/down2.png"));
+            left1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/squirrel_image/left1.png"));
+            left2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/squirrel_image/left2.png"));
+            right1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/squirrel_image/right1.png"));
+            right2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/squirrel_image/right2.png"));
         }catch (IOException i){
             i.printStackTrace();
         }

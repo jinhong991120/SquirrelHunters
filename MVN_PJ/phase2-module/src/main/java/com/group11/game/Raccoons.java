@@ -36,14 +36,14 @@ public class Raccoons extends Characters {
      */
     private void getRaccoonImage(){
         try{
-            up1 = ImageIO.read(getClass().getResourceAsStream("/raccoon/n1.png"));
-            up2 = ImageIO.read(getClass().getResourceAsStream("/raccoon/n2.png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream("/raccoon/s1.png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream("/raccoon/s2.png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream("/raccoon/w1.png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream("/raccoon/w2.png"));
-            right1 = ImageIO.read(getClass().getResourceAsStream("/raccoon/e1.png"));
-            right2 = ImageIO.read(getClass().getResourceAsStream("/raccoon/e2.png"));
+            up1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/n1.png"));
+            up2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/n2.png"));
+            down1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/s1.png"));
+            down2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/s2.png"));
+            left1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/w1.png"));
+            left2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/w2.png"));
+            right1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/e1.png"));
+            right2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/e2.png"));
         }catch (IOException i){
             i.printStackTrace();
         }
