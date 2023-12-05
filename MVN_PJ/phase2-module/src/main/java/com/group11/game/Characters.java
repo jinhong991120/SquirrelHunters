@@ -45,6 +45,25 @@ public abstract class Characters {
      */
     protected int spriteNumber = 1;
 
+
+    /**
+     * get the change of sprite
+     */
+    protected void changeSprite(){
+        spriteCounter++;
+
+        if(spriteCounter>15){
+            if (spriteNumber == 1){
+                spriteNumber = 2;
+            }
+
+            else if(spriteNumber == 2){
+                spriteNumber = 1;}
+
+            spriteCounter = 0;
+        }
+    }
+
     /**
      * Solid Area of Characters represented by a Rectangle.
      */

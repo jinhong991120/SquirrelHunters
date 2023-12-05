@@ -246,24 +246,6 @@ public class Squirrels extends Characters {
     public int getSprite(){
         return spriteNumber;
     }
-    /**
-     * change of the sprite
-     */
-    private void changeSprite(){
-        spriteCounter++;
-
-        if(spriteCounter>15){
-            if (spriteNumber == 1){
-                spriteNumber = 2;
-            }
-                
-            else if(spriteNumber == 2){
-                spriteNumber = 1;
-            }
-                
-            spriteCounter = 0;
-        }  
-    }
 
 
     /**
