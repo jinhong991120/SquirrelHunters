@@ -27,6 +27,8 @@ public class TileRepresenter {
 
     /** Array of `Tile` objects representing different types of tiles. */
     public Tile[] tiles;
+    /** Setter for Tiles */
+    public TileSetter TS;
 
     /**
      * Constructs a new `TileRepresenter` with a reference to the given GamePanel.
@@ -37,35 +39,15 @@ public class TileRepresenter {
         this.gp = gp;
         tiles = new Tile[4];
         mapArr = new int[gp.maxScreenCol][gp.maxScreenRow];
-        getTileImage();
+        TS = new TileSetter();
+        tiles = TS.tiles;
         loadMap();
     }
 
     /** Indicates whether to draw the path on the map. */
     private boolean drawPath = false;
 
-    /**
-     * Gets and sets images for different tile types.
-     */
-    public void getTileImage() {
-        tiles[0] = new Tile();
-        tiles[1] = new Tile();
-        tiles[2] = new Tile();
-        tiles[3] = new Tile();
-
-        try {
-            tiles[0].image = ImageIO.read(getClass().getResourceAsStream("/UI_image/tiles/tile_0001(1).png"));
-            tiles[1].image = ImageIO.read(getClass().getResourceAsStream("/UI_image/tiles/tile_0126.png"));
-            tiles[1].collision = true;
-
-            tiles[2].image = ImageIO.read(getClass().getResourceAsStream("/UI_image/tiles/tile_0037.png"));
-            tiles[2].collision = true;
-            tiles[3].image = ImageIO.read(getClass().getResourceAsStream("/UI_image/tiles/tile_0028.png"));
-            tiles[3].collision = true;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    
 
     /**
      * Draws the tiles on the graphics panel.
@@ -107,6 +89,7 @@ public class TileRepresenter {
     /**
      * Loads the map information from a text file.
      */
+    /* This class should be refactored into a new class named */
     private void loadMap() {
         try {
             InputStream is = getClass().getResourceAsStream("/mapFiles/mapInfo.txt");
