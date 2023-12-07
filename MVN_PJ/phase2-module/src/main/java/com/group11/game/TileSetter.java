@@ -1,6 +1,6 @@
 package com.group11.game;
 
-import io.IOException;
+import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class TileSetter{
