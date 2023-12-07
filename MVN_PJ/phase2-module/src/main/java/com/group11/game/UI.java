@@ -82,9 +82,9 @@ public class UI {
           getClass().getResourceAsStream("/UI_image/titleImage.png"));
       heartImage =
           ImageIO.read(getClass().getResourceAsStream("/UI_image/heart.png"));
-      raccoonImage1 = ImageIO.read(getClass().getResourceAsStream("/raccoon/e1.png"));
-      raccoonImage2 = ImageIO.read(getClass().getResourceAsStream("/raccoon/e2.png"));
-      squirrelImage = ImageIO.read(getClass().getResourceAsStream("/squirrel_image/right2.png"));
+      raccoonImage1 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/e1.png"));
+      raccoonImage2 = ImageIO.read(getClass().getResourceAsStream("/UI_image/raccoon/e2.png"));
+      squirrelImage = ImageIO.read(getClass().getResourceAsStream("/UI_image/squirrel_image/right2.png"));
     } catch (IOException e) {
       e.printStackTrace();
     }
