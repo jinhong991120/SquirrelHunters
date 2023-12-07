@@ -1,9 +1,5 @@
 # CMPT276F23_group11
-# Squirrel Hunters Game
-
-## Overview
-
-Brief description of your game.
+# Squirrel Hunters
 
 ## Prerequisites
 
@@ -24,8 +20,8 @@ Make sure you are in the project folder after cloning (`~/CMPT276F23_group11`).
 
 ### Controls
 
-<kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> - Move the character.
+- <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> - Move the character.
 
-<kbd>P</kbd> or <kbd>Esc</kbd> - Pause the game.
+- <kbd>P</kbd> or <kbd>Esc</kbd> - Pause the game.
 
-<kbd>Enter</kbd> - Select option on menu.
+- <kbd>Enter</kbd> - Select option on menu.
