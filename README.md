@@ -20,7 +20,7 @@ Commands to run
 
 make build 
 : clean and compile pakage 
-: create javadocs at target/site/apidocs/
+: create javadocs at CMPT276F23_group11/MVN_PJ/phase2-module/target/javadoc/com/group11/game/
 : create executable jar file
 
 make run
