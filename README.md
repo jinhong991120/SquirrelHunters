@@ -20,11 +20,11 @@ Commands to run
 
 make build 
 : clean and compile pakage 
-: create javadocs at CMPT276F23_group11/MVN_PJ/phase2-module/target/javadoc/com/group11/game/
-: create executable jar file
+create javadocs at CMPT276F23_group11/MVN_PJ/phase2-module/target/javadoc/com/group11/game/
+create executable jar file
 
 make run
-: execute jar file, runs the game
+:execute jar file, runs the game
 
 make test
-: clean and run test files
+:clean and run test files
