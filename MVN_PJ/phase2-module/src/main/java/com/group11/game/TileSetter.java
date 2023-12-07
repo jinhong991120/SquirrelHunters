@@ -8,7 +8,7 @@ public class TileSetter{
     /** Array of `Tile` objects representing different types of tiles. */
     public Tile[] tiles;
 
-
+	/**Constructer for TileSetter that sets all images to the new array of type Tile */
     public TileSetter(){
         tiles = new Tile[4];
         getTileImage();
