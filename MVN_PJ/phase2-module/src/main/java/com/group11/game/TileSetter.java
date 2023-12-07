@@ -11,7 +11,7 @@ public class TileSetter{
 
     public TileSetter(){
         tiles = new Tile[4];
-        getTileImage;
+        getTileImage();
     }
 
     /**
